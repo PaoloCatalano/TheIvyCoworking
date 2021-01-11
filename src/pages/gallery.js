@@ -24,10 +24,10 @@ import ReactMarkdown from "react-markdown"
 const ComponentName = ({ data }) => {
   console.log(data.allContentfulPrezziCards.nodes[2].noteEn)
   return (
-    <p>hello</p>
-    // <ReactMarkdown
-    //   source={data.allContentfulPrezziCards.nodes[2].noteEn}
-    // />
+
+    <ReactMarkdown
+      source={data.allContentfulPrezziCards.nodes[2].noteEn.noteEN}
+    />
   )
 }
 
