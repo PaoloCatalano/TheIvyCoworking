@@ -22,28 +22,19 @@ import { graphql } from "gatsby"
 import ReactMarkdown from "react-markdown"
 
 const ComponentName = ({ data }) => {
-  console.log(data.allContentfulPrezziCards.nodes[2].noteEn)
+  console.log(data.allContentfulProvaType.nodes[0].testo.testo)
   return (
-
-    <ReactMarkdown
-      source={data.allContentfulPrezziCards.nodes[2].noteEn.noteEN}
-    />
+    <ReactMarkdown source={data.allContentfulProvaType.nodes[0].testo.testo} />
   )
 }
 
 export const query = graphql`
   {
-    allContentfulPrezziCards {
+    allContentfulProvaType {
       nodes {
-        id
-        note
-        noteEn {
-          noteEn
-          id
+        testo {
+          testo
         }
-        sottotitoloEn
-        prezzoEn
-        titoloEn
       }
     }
   }
