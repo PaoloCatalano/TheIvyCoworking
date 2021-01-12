@@ -5,6 +5,7 @@ import Rooms from "../components/Rooms"
 import Section from "../components/Section"
 
 const Gallery = () => {
+  
   return (
     <>
       <SpecialNavbar />
@@ -14,6 +15,7 @@ const Gallery = () => {
     </>
   )
 }
+
 
 export default Gallery
 

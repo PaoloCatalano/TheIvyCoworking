@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from "react"
 import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
-import data from "../constants/data"
+import data2 from "../constants/data"
 import logo from "../assets/logo2.png"
-
+import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 
 function Slider() {
+  const query = useStaticQuery(graphql`
+    {
+      pics: allContentfulFotoHome {
+        data: nodes {
+          id
+          immagine {
+            url: fluid {
+              ...GatsbyContentfulFluid
+            }
+            name: title
+          }
+        }
+      }
+    }
+  `)
+
+const { pics: {data}} = query;
+
   const [photos, setPhotos] = useState(data)
   const [index, setIndex] = React.useState(0)
 
@@ -27,16 +46,6 @@ function Slider() {
     })
   }
 
-  // useEffect(() => {
-  //   const lastIndex = photos.length - 1
-  //   if (index < 0) {
-  //     setIndex(lastIndex)
-  //   }
-  //   if (index > lastIndex) {
-  //     setIndex(0)
-  //   }
-  // }, [index, photos])
-
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(oldIndex => {
@@ -53,6 +62,8 @@ function Slider() {
   }, [index])
 
 
+
+  
   return (
     <section className="slider">
       <div className="section-center">
@@ -70,7 +81,8 @@ function Slider() {
           </button>
         </div>
         {photos.map((photo, photoIndex) => {
-          const { id, url, name } = photo
+          // const { id, url, name } = photo
+          const { id, immagine: {url}, name} = photo;
 
           let position = "nextSlide"
           if (photoIndex === index) {
@@ -85,7 +97,8 @@ function Slider() {
 
           return (
             <article className={`slide ${position}`} key={id}>
-              <img src={url} alt={name} className="img" />
+              {/* vecchio <img src={url} alt={name} className="img" /> */}
+<Img fluid={url} alt={name}/>
             </article>
           )
         })}

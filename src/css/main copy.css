@@ -54,7 +54,7 @@ Variables
   --scurissimo-o: #223d4e;
   --scurissimo-o-deco: #111f27;
   /* altri */
-  --coffee: #ddbea9;
+  --pink: #ddbea9;
   --black: #0f0906;
   --gray: #f0efeb;
 }
@@ -90,6 +90,12 @@ body {
   letter-spacing: 1px;
    */
 }
+main {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 550px));
+}
 .icone {
   color: var(--scurissimo-b);
   font-size: 5rem;
@@ -100,7 +106,7 @@ h3 {
   color: black;
 }
 h4 {
-  color: var(--coffee);
+  color: var(--pink);
 }
 /* .underline {
   margin: auto;
@@ -122,7 +128,7 @@ a {
   color: white;
 }
 a:hover {
-  color: var(--coffee);
+  color: var(--pink);
 }
 .logo {
   margin-top: 15px;
@@ -137,7 +143,7 @@ a:hover {
   padding: 5px;
   background: #ffffff;
   border-radius: 100%;
-    transition: var(--transition);
+  transition: var(--transition);
 
   /* position: relative; */
 }
@@ -169,9 +175,9 @@ a:hover {
   display: block;
   text-align: center;
   font-weight: bolder;
-  color: var(--coffee);
+  color: var(--pink);
 }
-.arrow{
+.arrow {
   color: white;
   font-size: larger;
   margin-right: 0.25rem;
@@ -255,7 +261,7 @@ nav {
 }
 .links a:hover {
   background: var(--scuro-o);
-  color: var(--coffee);
+  color: var(--pink);
   padding-left: 1.5rem;
 }
 .social-icons-navbar {
@@ -336,9 +342,9 @@ Slider
   width: 100%;
 }
 .section-center {
+  height: 350px;
   margin: 0 auto;
-  height: 450px;
-  max-height: 80vh;
+  max-height: 100vh;
   text-align: center;
   position: relative;
   display: flex;
@@ -398,6 +404,14 @@ Slider
   opacity: 0;
   transition: var(--transition);
 }
+@media screen and (min-width: 900px) {
+ .section-center {
+  height: 555px;
+}
+  .slide div img {
+    height: 555px !important;
+  }
+}
 .slide.activeSlide {
   opacity: 1;
   transform: translateX(0);
@@ -423,7 +437,7 @@ Section
 .position {
   transform: translateY(-85px);
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   .depth {
     font-size: 5vw;
   }
@@ -433,28 +447,11 @@ Section
   padding: 50px;
   color: var(--scurissimo-o);
   font-weight: bold;
-  font-size: 6vw;
   position: relative;
   text-transform: uppercase;
   letter-spacing: var(--spacing);
-  text-decoration: overline;
-}
-/* .depth:before,
-.depth:after {
-  content: attr(title);
-  padding: 50px;
-  color: var(--scurissimo-o);
-  position: absolute;
 }
 
-.depth:before {
-  top: 0.9px;
-  left: 0.9px;
-}
-.depth:after {
-  top: 1px;
-  left: 1px;
-} */
 /* 
 ==============
 About
@@ -487,50 +484,29 @@ About
 /* 
 ==============
 Services
-=============
+============= 
  */
 .contenitore-servizi {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .contenitore-servizi p {
   text-align: center;
 }
+.contenitore-servizi .icone:hover {
+  color: var(--pink);
+  filter: drop-shadow(var(--dark-shadow));
+}
+
 .big {
   margin: auto;
   width: 85px;
 }
-
-/* .service {
-  background: var(--scurissimo-o);
-  display: grid;
-  place-items: center;
-  grid-template-rows: 50px 50px auto;
+.servizio {
+  flex: 0 1 250px; /*  No stretching: */
+  margin: 2rem 1rem;
 }
-.service:nth-of-type(even) {
-  border: ridge 1px var(--scurissimo-o-deco);
-  border-top: 0;
-  border-bottom: 0;
-}
-.testo {
-  padding: 1rem;
-  color: var(--chiarissimo-o);
-}
-
-@media screen and (max-width: 400px) {
-  .contenitore-servizi {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .service:nth-of-type(even) {
-    border: ridge 1px var(--scurissimo-o-deco);
-    border-left: 0;
-    border-right: 0;
-  }
-} */
 
 /* 
 ==============
@@ -547,30 +523,48 @@ Pricing
 .card {
   margin: 0.5rem 1rem;
   padding: 1rem;
-  flex: 0 1 250px;
-  height: 350px;
+  flex: 0 1 300px;
+  height: 450px;
   display: grid;
   grid-gap: 0.5rem;
   place-items: center;
   text-align: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 70px 120px 70px 70px;
   border-radius: var(--radius);
   transition: var(--transition);
   border: solid 1px var(--scuro-b);
 }
 .card:hover {
-  background: var(--chiaro-o);
+  transform: scale(1.1);
   box-shadow: var(--dark-shadow);
-  border: solid 1px var(--coffee);
-  color: var(--medio-b);
+  border: solid 1px var(--pink);
 }
-.card:hover .icone {
-  color: var(--medio-b);
-}
+
 .pacchetto {
   background: var(--medio-b);
 }
-.pacchetto p {
+.pacchetto h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.pacchetto h4 {
+  text-transform: capitalize;
+  padding: 0 1rem;
+}
+.pacchetto li {
   color: var(--black);
+  list-style-type: circle;
+  text-align: left;
+}
+.prezzo {
+  font-size: 25px;
+}
+.note ul li {
+  text-align: center;
+  list-style-type: none;
+  font-weight: bolder;
 }
 /* @media screen and (max-width: 400px) {
   .contenitore-pacchetti {
@@ -640,7 +634,7 @@ Contact
   border-top-left-radius: 0;
 }
 .submit-btn:hover {
-  background: var(--coffee);
+  background: var(--pink);
   color: var(--black);
 }
 /* 
@@ -650,7 +644,7 @@ Footer
  */
 .footer {
   padding: 2rem;
-  background-color: var(--coffee);
+  background-color: var(--pink);
   color: var(--scurissimo-b);
   display: grid;
   grid-template-rows: 1fr;
@@ -712,9 +706,9 @@ Error Page
 }
 @media screen and (max-width: 600px) {
   .error-page {
-  display: grid;
-  grid-template-rows: auto 50vh auto;
-}
+    display: grid;
+    grid-template-rows: auto 50vh auto;
+  }
 }
 /* 
 ==============
@@ -727,7 +721,7 @@ Rooms
   margin: 2rem;
 }
 .card-stanza:nth-of-type(even) {
-  background-color: var(--coffee);
+  background-color: var(--pink);
 }
 .card-stanza:nth-of-type(odd) {
   background-color: var(--scuro-o);
@@ -773,7 +767,7 @@ Rooms
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
- 
+
   text-align: left;
   color: var(--chiarissimo-o);
   border: solid 1px var(--scuro-o);
@@ -788,12 +782,8 @@ Rooms
   grid-column: 4 / 6;
   grid-row: 1;
   color: white;
-  border: solid 1px var(--coffee);
-  background: -webkit-linear-gradient(
-    top,
-    #ddbea9,
-    rgba(31, 54, 61, 0.705)
-  );
+  border: solid 1px var(--pink);
+  background: -webkit-linear-gradient(top, #ddbea9, rgba(31, 54, 61, 0.705));
 }
 
 /* responsive screen */
@@ -838,12 +828,8 @@ Rooms
     text-align: center;
   }
   .right {
-  color: white;
-  border: solid 1px var(--coffee);
-  background: -webkit-linear-gradient(
-    top,
-    #ddbea9,
-    rgba(31, 54, 61, 0.705)
-  );
-}
+    color: white;
+    border: solid 1px var(--pink);
+    background: -webkit-linear-gradient(top, #ddbea9, rgba(31, 54, 61, 0.705));
+  }
 }
