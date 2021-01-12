@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { FaBars } from "react-icons/fa"
-import Social from "../constants/social"
 import InAppNav from "../components/inAppNav"
+import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
 

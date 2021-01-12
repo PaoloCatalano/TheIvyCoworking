@@ -141,7 +141,8 @@ a:hover {
 }
 .cerchio {
   padding: 5px;
-  background: #ffffff;
+  background: #ffffff86;
+  /* background: var(--trasparente-colore); */
   border-radius: 100%;
   transition: var(--transition);
 
@@ -359,7 +360,7 @@ Slider
 }
 .title {
   margin: auto;
-  color: white;
+  color: transparent;
 }
 .title span {
   font-size: 1em;
@@ -496,7 +497,7 @@ Services
 }
 .contenitore-servizi .icone:hover {
   color: var(--pink);
-  /* filter: drop-shadow(var(--dark-shadow)); */
+  /* filter: drop-shadow(var(--dark-shadow)); troppo lento */
 }
 
 .big {
@@ -551,7 +552,7 @@ Pricing
 }
 .pacchetto h4 {
   text-transform: capitalize;
-  /* padding: 0 1rem; */
+  /* padding: 0 1rem; troppo lento*/
 }
 .pacchetto li {
   color: var(--black);

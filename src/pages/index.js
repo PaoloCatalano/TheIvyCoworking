@@ -10,7 +10,6 @@ import Pricing from "../components/Pricing"
 import Section from "../components/Section"
 
 export default function Home() {
-
   return (
     <>
       <Navbar />
