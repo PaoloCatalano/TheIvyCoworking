@@ -496,7 +496,7 @@ Services
 }
 .contenitore-servizi .icone:hover {
   color: var(--pink);
-  filter: drop-shadow(var(--dark-shadow));
+  /* filter: drop-shadow(var(--dark-shadow)); */
 }
 
 .big {
@@ -551,7 +551,7 @@ Pricing
 }
 .pacchetto h4 {
   text-transform: capitalize;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 }
 .pacchetto li {
   color: var(--black);
