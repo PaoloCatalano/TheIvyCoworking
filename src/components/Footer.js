@@ -31,9 +31,9 @@ const Footer = () => {
       <section className="colonna">
         <div className="address">
           <a
-            href="https://www.google.com/maps/dir/51.897107,-8.4704763/41.4095833,2.1855948/@47.0566327,-11.4749245,5z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0"
+            href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D41.409583318199%252C2.1855947887525%26fbclid%3DIwAR1EarXO-9FDs2c0oAA5JtBl-mk2yXOCzhd4hFVpXHa9ReE1ajWbs7Hpl-E&h=AT0pWZq249Pkp9IONwN0CQeRn1IhqzvJFIrEaZKdZX5dspjne7Puvb1_i0vtmAB0IVTK-9kQzM0MV8n8TCzMJ-UAfNhtltSFcubit9yv9sDWolgnhQWAs15AEa9z5Fn-1smf"
             target="_blank"
-            // rel="noopener noreferrer"
+            rel="noopener noreferrer"
           >
           <GoLocation className="service-icon" />
           </a>
