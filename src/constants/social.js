@@ -35,7 +35,7 @@ export default ({ styleClass }) => {
   const links = data.map(link => {
     return (
       <li key={link.id}>
-        <a href={link.url} className="social-link">
+        <a href={link.url} target="_blank" className="social-link">
           {link.icon}
         </a>
       </li>

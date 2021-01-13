@@ -125,7 +125,7 @@ a {
   font-weight: bolder;
   text-decoration: none;
   transition: var(--transition);
-  color: white;
+  color: var(--scurissimo-b);
 }
 a:hover {
   color: var(--pink);
