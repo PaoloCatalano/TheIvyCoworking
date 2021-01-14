@@ -515,17 +515,17 @@ Pricing
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
-  grid-gap: 3rem 1rem;
+  justify-content: center;
+  grid-gap: 2rem 1rem;
   padding: 0 7vw;
 }
 .card {
-  margin: 0.5rem 1rem;
+  /* margin: 0.5rem 1rem; */
   padding: 1rem;
   flex: 0 1 300px;
   height: 450px;
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 2px;
   place-items: center;
   text-align: center;
   grid-template-columns: 1fr;
@@ -540,22 +540,6 @@ Pricing
   border: solid 1px var(--pink);
 }
 
-.pacchetto {
-  background: rgb(221,190,169);
-background: rgb(221,190,169);
-background: -moz-linear-gradient(190deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 31%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
-background: -webkit-linear-gradient(190deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 31%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
-background: linear-gradient(190deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 31%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ddbea9",endColorstr="#335c75",GradientType=1);
-  transition: var(--transition) !important;
-}
-  .pacchetto:hover{
- background: rgb(221,190,169);
-background: -moz-linear-gradient(180deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 33%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
-background: -webkit-linear-gradient(180deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 33%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
-background: linear-gradient(180deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 33%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ddbea9",endColorstr="#335c75",GradientType=1);
-}
 .pacchetto h1 {
   font-size: 30px;
   text-transform: uppercase;
@@ -566,23 +550,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ddbea9",endCo
   text-transform: capitalize;
   color:var(--scurissimo-b);
     background-color: transparent;
-  border-bottom: solid 1px var(--scuro-b);
-  height: 100%;
-  width: 112%;
-  -webkit-box-shadow: inset 0px -11px 15px -5px var(--chiarissimo-o); 
-box-shadow: inset 0px -11px 15px -5px var(--chiarissimo-o);
-  padding: 10px;
-  transition: var(--transition);
 }
-.card:hover h4 {
-    border-bottom: solid 1px var(--pink);
-  }
+
 
 .pacchetto li {
   color: var(--black);
   list-style-type: circle;
   text-align: left;
 }
+
 .prezzo {
   font-size: 25px;
 }
@@ -591,20 +567,9 @@ box-shadow: inset 0px -11px 15px -5px var(--chiarissimo-o);
   list-style-type: none;
   font-weight: bolder;
   font-size: small;
-  color:#fff;
+  color:black;
 }
-/* @media screen and (max-width: 400px) {
-  .contenitore-pacchetti {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-  }
-  .pacchetto:nth-of-type(even) {
-    border: ridge 1px var(--medio-b-deco);
-    border-left: 0;
-    border-right: 0;
-  }
-} */
+
 /*
 ==============
 Contact
@@ -691,6 +656,13 @@ Footer
   padding: 1px;
   display: grid;
   place-items: center;
+  text-align: center;
+}
+.address a:hover{
+  color: var(--scurissimo-b);
+}
+.address a:hover .service-icon:hover{
+  color: var(--scurissimo-b);
 }
 .spazio {
   width: 160px;

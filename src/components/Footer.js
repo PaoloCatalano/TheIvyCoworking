@@ -7,23 +7,21 @@ import { GoLocation } from "react-icons/go"
 import { AiOutlinePhone } from "react-icons/ai"
 import { useStaticQuery, graphql } from "gatsby"
 
-
 const Footer = () => {
   const { address, weekday, weekend, phone, email } = info
   
   //Contentful
   const {
-    contentfulContatti: { indirizzo },
+    contentfulContatti: { indirizzo, orario },
   } = useStaticQuery(graphql`
     {
       contentfulContatti {
         indirizzo
-        
+        orario
       }
     }
   `)
 
-  
   return (
     <div className="footer">
       <section className="colonna">
@@ -42,8 +40,7 @@ const Footer = () => {
         </div>
         <div className="address">
           <BiTimeFive className="service-icon" />
-          <p>{weekday}</p>
-          <p>{weekend}</p>
+          <p>Mon - Fri: {orario}</p>
         </div>
       </section>
       <section className="colonna">
