@@ -8,7 +8,7 @@ import Services from "../components/Services"
 import Contact from "../components/Contact"
 import Pricing from "../components/Pricing"
 import Section from "../components/Section"
-
+import Descrizione from '../components/Descrizione'
 
 export default function Home() {
   return (
@@ -17,9 +17,7 @@ export default function Home() {
       <Slider />
       <main>
         <section>
-          <div id="about" className="position"></div>
-          <Section title={"about"} />
-          <About />
+          <Descrizione />
         </section>
         <section>
           <div id="services" className="position"></div>
