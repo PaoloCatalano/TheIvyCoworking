@@ -18,6 +18,7 @@ const Footer = () => {
     {
       contentfulContatti {
         indirizzo
+        
       }
     }
   `)
@@ -35,7 +36,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-          <GoLocation className="service-icon" />
+            <GoLocation className="service-icon" />
           </a>
           {indirizzo}
         </div>

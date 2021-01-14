@@ -61,9 +61,6 @@ const { pics: {data}} = query;
     }
   }, [index])
 
-
-
-  
   return (
     <section className="slider">
       <div className="section-center">
@@ -72,8 +69,8 @@ const { pics: {data}} = query;
             <BiLeftArrow className="icone small" />
           </button>
           <div className="title">
-            <div className='cerchio'>
-              <img src={logo} alt="logo" className="logo" />
+            <div className="cerchio">
+              <img src={logo} alt="logo" className=" logo-small-slider logo" />
             </div>
           </div>
           <button className="next" onClick={nextSlide}>
@@ -82,7 +79,11 @@ const { pics: {data}} = query;
         </div>
         {photos.map((photo, photoIndex) => {
           // const { id, url, name } = photo
-          const { id, immagine: {url}, name} = photo;
+          const {
+            id,
+            immagine: { url },
+            name,
+          } = photo
 
           let position = "nextSlide"
           if (photoIndex === index) {
@@ -98,7 +99,7 @@ const { pics: {data}} = query;
           return (
             <article className={`slide ${position}`} key={id}>
               {/* vecchio <img src={url} alt={name} className="img" /> */}
-<Img fluid={url} alt={name}/>
+              <Img fluid={url} alt={name} />
             </article>
           )
         })}

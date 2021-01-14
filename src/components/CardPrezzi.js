@@ -45,9 +45,9 @@ const CardPrezzi = () => {
               {/**<div className="icone">{icon}</div>*/}
               <h1>{titoloEn}</h1>
               <h4>{sottotitoloEn}</h4>
-              <ul className="testo">
+              <div className="testo">
                 <ReactMarkdown source={testo.featureEn} />
-              </ul>
+              </div>
               <h3>
                 <span className="prezzo"> € {prezzoEn}</span>
                 {mensile && <span> month</span>} + VAT{" "}
@@ -62,6 +62,7 @@ const CardPrezzi = () => {
     </>
   )
 }
+
 
 
 export default CardPrezzi

@@ -35,6 +35,7 @@ Variables
 
   /* COOLORS */
   --trasparente: rgba(163, 163, 163, 0.705);
+  --trasparente-molto: rgba(163, 163, 163, 0.349);
   --trasparente-colore: rgba(69, 127, 150, 0.705);
   /* Bright */
   --chiaro-bianco-b: #deebf0;
@@ -82,7 +83,7 @@ body {
   padding: 0;
   background: #ffffff;
   color: var(--scurissimo-b);
-  font-size: medium;
+  font-size: large;
   overflow-x: hidden;
   font-family: var(--ff-primary);
   /* 
@@ -108,13 +109,6 @@ h3 {
 h4 {
   color: var(--pink);
 }
-/* .underline {
-  margin: auto;
-  background: red;
-  width: 100px;
-  height: 2px;
-  animation: change-color 4s ease-in-out infinite alternate;
-} */
 
 li {
   list-style-type: none;
@@ -130,23 +124,28 @@ a {
 a:hover {
   color: var(--pink);
 }
+.logo-small-slider{
+    width: 150px;
+}
 .logo {
   margin-top: 15px;
   margin-left: 5px;
   width: 150px;
   background: transparent;
   transition: var(--transition);
-
-  /* position: absolute; */
+}
+@media screen and (max-width: 550px){
+  .logo-small-slider {
+    width: 90px;
+    height: 77px;
+    }
 }
 .cerchio {
   padding: 5px;
-  background: #ffffff86;
+  background: #ffffff;
   /* background: var(--trasparente-colore); */
   border-radius: 100%;
   transition: var(--transition);
-
-  /* position: relative; */
 }
 .service-icon {
   font-size: larger;
@@ -184,6 +183,7 @@ a:hover {
   margin-right: 0.25rem;
   transform: translateY(3px);
 }
+
 /*=============== 
 Button
 ===============
@@ -279,9 +279,9 @@ nav {
 .show-container {
   height: 10rem;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .nav-center {
-    max-width: 1170px;
+    max-width: 95vw;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -353,8 +353,8 @@ Slider
 }
 .slider-comandi {
   width: 100%;
-  background: var(--trasparente);
-  z-index: 1;
+  background: var(--trasparente-molto);
+  z-index: 999;
   display: flex;
   place-items: center;
 }
@@ -375,19 +375,13 @@ Slider
   transition: var(--transition);
   border-radius: var(--radius);
 }
-.prev:hover,
-.next:hover {
-  color: rgba(255, 255, 0, 0.445);
+.prev .icone:hover,
+.next .icone:hover {
+  color: var(--pink);
 }
 .small {
   font-size: 2rem;
 }
-/* .prev {
-  left: 0;
-}
-.next {
-  right: 0;
-} */
 
 .img {
   z-index: 9;
@@ -405,14 +399,16 @@ Slider
   opacity: 0;
   transition: var(--transition);
 }
-@media screen and (min-width: 900px) {
- .section-center {
-  height: 555px;
-}
+@media screen and (min-width: 550px) {
+  .section-center {
+    height: 555px;
+  }
   .slide div img {
     height: 555px !important;
   }
+
 }
+
 .slide.activeSlide {
   opacity: 1;
   transform: translateX(0);
@@ -491,6 +487,7 @@ Services
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 5vw;
 }
 .contenitore-servizi p {
   text-align: center;
@@ -519,7 +516,8 @@ Pricing
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  grid-gap: 0.5rem;
+  grid-gap: 3rem 1rem;
+  padding: 0 7vw;
 }
 .card {
   margin: 0.5rem 1rem;
@@ -552,8 +550,10 @@ Pricing
 }
 .pacchetto h4 {
   text-transform: capitalize;
+  color: #fff;
   /* padding: 0 1rem; troppo lento*/
 }
+
 .pacchetto li {
   color: var(--black);
   list-style-type: circle;
@@ -566,6 +566,7 @@ Pricing
   text-align: center;
   list-style-type: none;
   font-weight: bolder;
+  font-size: small;
 }
 /* @media screen and (max-width: 400px) {
   .contenitore-pacchetti {
