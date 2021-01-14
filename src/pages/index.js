@@ -32,6 +32,11 @@ export default function Home() {
           <Pricing />
         </section>
         <section>
+          <div id="about" className="position"></div>
+          <Section title={"about"} />
+          <About />
+        </section>
+        <section>
           <div id="contact" className="position"></div>
           <Section title={"contact"} />
           <Contact />
