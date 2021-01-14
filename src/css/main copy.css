@@ -137,7 +137,7 @@ a:hover {
 @media screen and (max-width: 550px){
   .logo-small-slider {
     width: 90px;
-    height: 77px;
+    height: 76px;
     }
 }
 .cerchio {
@@ -541,18 +541,42 @@ Pricing
 }
 
 .pacchetto {
-  background: var(--medio-b);
+  background: rgb(221,190,169);
+background: rgb(221,190,169);
+background: -moz-linear-gradient(190deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 31%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
+background: -webkit-linear-gradient(190deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 31%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
+background: linear-gradient(190deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 31%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ddbea9",endColorstr="#335c75",GradientType=1);
+  transition: var(--transition) !important;
+}
+  .pacchetto:hover{
+ background: rgb(221,190,169);
+background: -moz-linear-gradient(180deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 33%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
+background: -webkit-linear-gradient(180deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 33%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
+background: linear-gradient(180deg, rgba(221,190,169,1) 0%, rgba(230,239,244,1) 33%, rgba(54,99,117,1) 89%, rgba(51,92,117,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ddbea9",endColorstr="#335c75",GradientType=1);
 }
 .pacchetto h1 {
   font-size: 30px;
   text-transform: uppercase;
   text-decoration: underline;
+  background-color: transparent;
 }
 .pacchetto h4 {
   text-transform: capitalize;
-  color: #fff;
-  /* padding: 0 1rem; troppo lento*/
+  color:var(--scurissimo-b);
+    background-color: transparent;
+  border-bottom: solid 1px var(--scuro-b);
+  height: 100%;
+  width: 112%;
+  -webkit-box-shadow: inset 0px -11px 15px -5px var(--chiarissimo-o); 
+box-shadow: inset 0px -11px 15px -5px var(--chiarissimo-o);
+  padding: 10px;
+  transition: var(--transition);
 }
+.card:hover h4 {
+    border-bottom: solid 1px var(--pink);
+  }
 
 .pacchetto li {
   color: var(--black);
@@ -567,6 +591,7 @@ Pricing
   list-style-type: none;
   font-weight: bolder;
   font-size: small;
+  color:#fff;
 }
 /* @media screen and (max-width: 400px) {
   .contenitore-pacchetti {
