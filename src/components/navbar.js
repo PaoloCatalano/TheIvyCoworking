@@ -6,6 +6,7 @@ import info from "../constants/contact"
 import about from "../constants/about"
 
 
+
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false)
   const linksContainerRef = useRef(null)
