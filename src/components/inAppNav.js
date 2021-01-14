@@ -14,31 +14,20 @@ const InAppNav = () => {
 
   return (
     <ul className="in-app-nav links">
-      <Links />
-      {/*
-      <li> <a
-        onClick={() => {
-          navigate("/")
-        }}
-        >
-        top
-      </a> 
-      </li>*/}
       <li>
         <a
           onClick={() => {
-            navigate("#about")
+            navigate("/")
           }}
         >
-          about
+          home
         </a>
       </li>
+      
       <li>
         <a
-          onClick={(e) => {
+          onClick={e => {
             navigate("#services")
-
-            
           }}
         >
           services
@@ -57,12 +46,22 @@ const InAppNav = () => {
       <li>
         <a
           onClick={() => {
+            navigate("#about")
+          }}
+        >
+          about
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={() => {
             navigate("#contact")
           }}
         >
           contact
         </a>
       </li>
+      <Links />
     </ul>
   )
 }

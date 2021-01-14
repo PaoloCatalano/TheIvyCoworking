@@ -3,23 +3,27 @@ import React from 'react'
 const Descrizione = () => {
     return (
       <>
-        <h1>The Ivy Coworking</h1>
-        <p>
-          we are baby copper mug shaman 8-bit dreamcatcher tbh taiyaki kale
-          chips flannel. Subway tile poutine hell of truffaut twee, mlkshk
-          before they sold out plaid pok pok neutra sustainable vinyl. 
-          <p>
-          Franzen
-          la croix tacos DIY skateboard kombucha asymmetrical sartorial butcher
-          chillwave pinterest yuccie single-origin coffee vape. Coloring book
-          listicle normcore, woke trust fund four dollar toast tumeric poutine
-          </p>
-          <p>
-          banh mi live-edge mlkshk narwhal meggings intelligentsia PBR&B.
-          Slow-carb XOXO try-hard lumbersexual crucifix. Hammock unicorn
-          live-edge venmo messenger bag, shabby chic normcore.
-          </p>
-        </p>
+        <div className="about">
+          <div className="about-title">
+            <h1>The Ivy Coworking</h1>
+            <h3>Your coworking in El Clot!</h3>
+            <p>
+              160mq of a cozy workspace distributed on two floors of an inside
+              terraced building - a charming gateaway from the city’s noises at
+              two feet from the city itself.
+            </p>
+            <p>
+              We offer different memberships based on different needs but comfy
+              seats, high-speed fiber-optic internet, printer & scanner and a
+              cup of good coffee/tea are always included.
+            </p>
+            <p>
+              We welcome any freelancers, remote workers and entepreneurs from
+              all over the world and we even welcome your fluffy friends should
+              you feel the need to spend more time together.
+            </p>
+          </div>
+        </div>
       </>
     )
 }
