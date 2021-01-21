@@ -17,17 +17,17 @@ export default ({ styleClass }) => {
   const data = [
     {
       id: 1,
-      icon: <FaFacebookSquare className="facebook" />,
+      icon: <FaFacebookSquare className="facebook icon" />,
       url: `${facebookLink}`,
     },
     {
       id: 2,
-      icon: <FaWhatsapp className="whatsapp" />,
+      icon: <FaWhatsapp className="whatsapp icon" />,
       url: `https://wa.me/${whatsappNumber}`,
     },
     {
       id: 3,
-      icon: <FaInstagramSquare className="instagram" />,
+      icon: <FaInstagramSquare className="instagram icon" />,
       url: `${instagramLink}`,
     },
   ]
@@ -35,15 +35,17 @@ export default ({ styleClass }) => {
   const links = data.map(link => {
     return (
       <li key={link.id}>
-        <a href={link.url} target="_blank" className="social-link">
+        <a href={link.url} target="_blank" className="social-link"
+        >
           {link.icon}
         </a>
       </li>
     )
   })
 
+
   return (
-    <section className="spazio">
+    <section>
       <ul className={`social-links ${styleClass ? styleClass : ""}`}>
         {links}
       </ul>

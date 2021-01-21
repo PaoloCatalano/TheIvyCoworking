@@ -9,15 +9,38 @@ import Contact from "../components/Contact"
 import Pricing from "../components/Pricing"
 import Section from "../components/Section"
 import Descrizione from '../components/Descrizione'
+import Background from 'gatsby-background-image'
+import { useStaticQuery, graphql } from "gatsby"
+
 
 export default function Home() {
+   const query = useStaticQuery(graphql`
+     {
+       pics: allContentfulFotoHome {
+         data: nodes {
+           id
+           immagine {
+             url: fluid {
+               ...GatsbyContentfulFluid
+             }
+             name: title
+           }
+         }
+       }
+     }
+   `)
+
+
+
   return (
     <>
       <Navbar />
       <Slider />
       <main>
         <section>
-          <Descrizione />
+          <Background fluid={query.pics.data[0].immagine.url}>
+            <Descrizione />
+          </Background>
         </section>
         <section>
           <div id="services" className="position"></div>
@@ -25,9 +48,11 @@ export default function Home() {
           <Services />
         </section>
         <section>
-          <div id="pricing" className="position"></div>
-          <Section title={"pricing"} />
-          <Pricing />
+          <Background fluid={query.pics.data[0].immagine.url}>
+            <div id="pricing" className="position"></div>
+            <Section title={"pricing"} />
+            <Pricing />
+          </Background>
         </section>
         <section>
           <div id="about" className="position"></div>
@@ -35,9 +60,11 @@ export default function Home() {
           <About />
         </section>
         <section>
-          <div id="contact" className="position"></div>
-          <Section title={"contact"} />
-          <Contact />
+          <Background fluid={query.pics.data[0].immagine.url}>
+            <div id="contact" className="position"></div>
+            <Section title={"contact"} />
+            <Contact />
+          </Background>
         </section>
       </main>
       <Footer />

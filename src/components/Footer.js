@@ -9,19 +9,28 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Footer = () => {
   const { address, weekday, weekend, phone, email } = info
-  
+
   //Contentful
   const {
-    contentfulContatti: { indirizzo, orario },
+    contentfulContatti: { indirizzo, orario, telefono },
   } = useStaticQuery(graphql`
     {
       contentfulContatti {
         indirizzo
         orario
+        telefono
       }
     }
   `)
 
+  const telefonoSpazi =
+    telefono.toString().substring(0, 3) +
+    " " +
+    telefono.substring(3, 6) +
+    " " +
+    telefono.substring(6, 9) +
+    " " +
+    telefono.substring(9, telefono.length)
   return (
     <div className="footer">
       <section className="colonna">
@@ -45,12 +54,15 @@ const Footer = () => {
       </section>
       <section className="colonna">
         <Social styleClass={`social-icons`} />
-        <p className="email">{email}</p>
+        <a href={`mailto:${email}`} className="email">{email}</a>
         <AiOutlinePhone className="service-icon" />
-        <p>{phone}</p>
+        <a href={`tel:${telefono}`} >
+          {telefonoSpazi}
+        </a>
       </section>
     </div>
   )
 }
+
 
 export default Footer

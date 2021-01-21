@@ -41,29 +41,28 @@ const CardPrezzi = () => {
           info,
         }) => {
           return (
-            <section key={contentfulid} className="pacchetto card">
-              {/**<div className="icone">{icon}</div>*/}
-              <h1>{titoloEn}</h1>
-              <h4>{sottotitoloEn}</h4>
-              <div className="testo">
-                <ReactMarkdown source={testo.featureEn} />
-              </div>
-              <h3>
-                <span className="prezzo"> € {prezzoEn}</span>
-                {mensile && <span> month</span>} + VAT{" "}
-              </h3>
-              <div className="note">
-                {note && <ReactMarkdown source={info.noteEn} />}
-              </div>
-            </section>
+            <div key={contentfulid} className='bordo-carta'>
+              <section className="pacchetto card">
+                {/**<div className="icone">{icon}</div>*/}
+                <h1>{titoloEn}</h1>
+                <h4>{sottotitoloEn}</h4>
+                <div className="testo">
+                  <ReactMarkdown source={testo.featureEn} />
+                </div>
+                <h3>
+                  <span className="prezzo"> € {prezzoEn}</span>
+                  {mensile && <span> month</span>} + VAT{" "}
+                </h3>
+                <div className="note">
+                  {note && <ReactMarkdown source={info.noteEn} />}
+                </div>
+              </section>
+            </div>
           )
         }
       )}
     </>
   )
 }
-
-
-
 
 export default CardPrezzi

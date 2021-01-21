@@ -59,6 +59,9 @@ Variables
   --pink: #ddbea9;
   --black: #0f0906;
   --gray: #f0efeb;
+  /* specifici */
+  --colore-titolo: #007D8E;
+  --colore-note: #1F93AE;
 }
 
 *,
@@ -150,7 +153,7 @@ a:hover {
 }
 .service-icon {
   font-size: larger;
-  margin: 0.25rem;
+  margin: 0 0.25rem;
 }
 .social-links {
   display: flex;
@@ -184,7 +187,9 @@ a:hover {
   margin-right: 0.25rem;
   transform: translateY(3px);
 }
-
+.icon{
+  transform: translateY(10px)
+}
 /*=============== 
 Button
 ===============
@@ -224,7 +229,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem;
+    padding:0 2rem;
 }
 .title-navbar {
   text-transform: uppercase;
@@ -280,14 +285,14 @@ nav {
 .show-container {
   height: 10rem;
 }
+
 @media screen and (min-width: 900px) {
   .nav-center {
     max-width: 95vw;
-    margin: 0 auto;
+    margin: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
   }
   .nav-header {
     padding: 0;
@@ -315,18 +320,14 @@ nav {
     padding: 0;
     background: transparent;
   }
-  .social-icons {
+    .social-icons {
     display: flex;
   }
   .social-icons a {
+    height: auto;
     margin: 0 0.5rem;
-    /* color: var(--clr-primary-5); */
     transition: var(--transition);
   }
-  .social-icons a:hover {
-    /* color: var(--clr-primary-7); */
-  }
-
   .email-nav {
     display: block;
   }
@@ -423,12 +424,19 @@ Slider
 
 /* 
 ==============
+Background
+=============
+ */
+
+/* 
+==============
 Descrizione
 =============
  */
 .about {
   margin: 3rem 5vw;
   height: 100%;
+  min-height: 50vh;
 }
 .about-title {
   text-align: center;
@@ -451,6 +459,7 @@ Descrizione
   text-align: center;
   letter-spacing: var(--spacing);
   margin: 2rem;
+  background-color: #fff;
 }
 
 /* 
@@ -523,6 +532,16 @@ Pricing
   grid-gap: 2rem 1rem;
   padding: 0 7vw;
 }
+.bordo-carta{
+  width: 300px;
+  height: auto;
+    border: solid 4px var(--colore-titolo);
+    border-radius: var(--radius);
+  transition: 0.5s;
+    background-color: #fff;
+
+}
+
 .card {
   /* margin: 0.5rem 1rem; */
   padding: 1rem;
@@ -536,42 +555,47 @@ Pricing
   grid-template-rows: 70px 70px 120px 70px 70px;
   border-radius: var(--radius);
   transition: var(--transition);
-  border: solid 1px var(--scuro-b);
+  border: solid 3px var(--colore-titolo);
+  margin: 2px;
 }
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: var(--dark-shadow);
-  border: solid 1px var(--pink);
+.bordo-carta:hover{
+    transform: scale(1.05);
+    box-shadow: var(--dark-shadow);
 }
-
 .pacchetto h1 {
   font-size: 30px;
   text-transform: uppercase;
   text-decoration: underline;
   background-color: transparent;
+  color: var(--colore-titolo)
 }
 .pacchetto h4 {
   text-transform: capitalize;
   color:var(--scurissimo-b);
-    background-color: transparent;
+  background-color: transparent;
 }
 
+.pacchetto h3{
+      color: var(--colore-note)
+}
 
 .pacchetto li {
   color: var(--black);
   list-style-type: circle;
   text-align: left;
+  margin: 2px;
 }
 
 .prezzo {
   font-size: 25px;
+
 }
 .note ul li {
   text-align: center;
   list-style-type: none;
   font-weight: bolder;
-  font-size: small;
-  color:black;
+  font-size: medium;
+  color: var(--colore-note)
 }
 
 /*
@@ -662,15 +686,13 @@ Footer
   place-items: center;
   text-align: center;
 }
-.address a:hover{
+.footer a:hover{
   color: var(--scurissimo-b);
 }
-.address a:hover .service-icon:hover{
+.footer a:hover .service-icon:hover{
   color: var(--scurissimo-b);
 }
-.spazio {
-  width: 160px;
-}
+
 @media screen and (max-width: 600px) {
   .footer {
     padding: 2rem;
@@ -681,7 +703,11 @@ Footer
     align-items: center;
   }
 }
-
+@media screen and (max-width: 900px){
+  .footer .icon{
+    margin: 0 0.5rem;
+  }
+}
 /* ==============
  RESPONSIVE GLOBAL 
 ================= */
@@ -836,3 +862,4 @@ Rooms
     background: -webkit-linear-gradient(top, #ddbea9, rgba(31, 54, 61, 0.705));
   }
 }
+/* spazio */
