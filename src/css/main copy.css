@@ -1,17 +1,10 @@
-/* font:
-Be Vietnam
-Gabriel Lam, Tony Le, Vietanh Nguyen, beGroup Vietnam
-
-Sulphur Point
-Dale Sattler (but not Y)
-*/
-
 /*
 =============== 
 Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap");
 /*
 =============== 
 Variables
@@ -29,6 +22,7 @@ Variables
   --fixed-width: 700px;
   --font-size: 50px;
   --ff-primary: "Sulphur Point", sans-serif;
+  --ff-second: "Bodoni Moda", serif;
   --light: 300;
   --medium: 400;
   --bold: 700;
@@ -60,8 +54,8 @@ Variables
   --black: #0f0906;
   --gray: #f0efeb;
   /* specifici */
-  --colore-titolo: #007D8E;
-  --colore-note: #1F93AE;
+  --colore-titolo: #007d8e;
+  --colore-note: #1f93ae;
 }
 
 *,
@@ -87,13 +81,11 @@ body {
   padding: 0;
   background: #ffffff;
   color: var(--scurissimo-b);
-  font-size: large;
+  font-size: medium;
   overflow-x: hidden;
-  font-family: var(--ff-primary);
-  /* 
-  font-weight: 1000;
-  letter-spacing: 1px;
-   */
+  font-family: var(--ff-second);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 main {
   display: grid;
@@ -128,8 +120,8 @@ a {
 a:hover {
   color: var(--pink);
 }
-.logo-small-slider{
-    width: 150px;
+.logo-small-slider {
+  width: 150px;
 }
 .logo {
   margin-top: 15px;
@@ -138,11 +130,11 @@ a:hover {
   background: transparent;
   transition: var(--transition);
 }
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   .logo-small-slider {
     width: 90px;
     height: 76px;
-    }
+  }
 }
 .cerchio {
   padding: 5px;
@@ -187,8 +179,16 @@ a:hover {
   margin-right: 0.25rem;
   transform: translateY(3px);
 }
-.icon{
-  transform: translateY(10px)
+.icon {
+  transform: translateY(10px);
+}
+.white {
+  background: #fff;
+  border: solid 1px #000000;
+}
+.spazio{
+  width: 100%;
+  /*INLINE style={{height: 50}} */
 }
 /*=============== 
 Button
@@ -229,13 +229,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-    padding:0 2rem;
+  padding: 0 2rem;
 }
 .title-navbar {
   text-transform: uppercase;
   color: var(--scurissimo-b);
   font-size: 25px;
   font-weight: bolder;
+  font-family: var(--ff-primary);
 }
 .title-navbar span {
   color: white;
@@ -320,7 +321,7 @@ nav {
     padding: 0;
     background: transparent;
   }
-    .social-icons {
+  .social-icons {
     display: flex;
   }
   .social-icons a {
@@ -408,7 +409,6 @@ Slider
   .slide div img {
     height: 555px !important;
   }
-
 }
 
 .slide.activeSlide {
@@ -425,18 +425,43 @@ Slider
 /* 
 ==============
 Background
-=============
+=============spazio
  */
+.background{
+  background-image: url("../../src/assets/sfondo.jpeg");
+  background-repeat: repeat;
+  background-position: top;
+  background-size: contain;
+}
 
+/* GATSBY-Background-Image */
+/* .background {
+  width: 100vw;
+  position: absolute;
+  top:0px;
+  padding: 0px;
+  overflow: hidden;
+  background-repeat: repeat !important;
+}
+.background:before,.background:after {
+  width: 100vw;
+  position: absolute;
+  top:0px;
+  padding: 0px;
+  background-size: auto !important;
+  background-repeat: repeat !important;
+  background-position: top;
+} */
 /* 
 ==============
 Descrizione
 =============
  */
+.white {
+  /*classe di Descrizione*/
+}
 .about {
   margin: 3rem 5vw;
-  height: 100%;
-  min-height: 50vh;
 }
 .about-title {
   text-align: center;
@@ -445,19 +470,21 @@ Descrizione
 }
 .about-title h1 {
   text-transform: uppercase;
-  margin: 3rem;
-}
-.about-title h1 span {
-  color: var(--medio-b);
+  margin: 1rem;
+  font-family: var(--ff-primary);
+  font-size: xx-large;
   font-weight: bolder;
 }
-.about-title h3 {
-  letter-spacing: normal;
-  margin: 3rem;
+/* .about-title h1 span {
+  color: var(--medio-b);
 }
+.about-title h3 {
+  letter-spacing: 0.5px;
+  margin: 3rem;
+} */
 .about p {
   text-align: center;
-  letter-spacing: var(--spacing);
+  letter-spacing: 1px;
   margin: 2rem;
   background-color: #fff;
 }
@@ -466,7 +493,7 @@ Descrizione
 ==============
 Section
 =============
- */
+*/
 .section {
   height: 30vh;
   width: 100vw;
@@ -490,7 +517,10 @@ Section
   text-transform: uppercase;
   letter-spacing: var(--spacing);
 }
-
+.section-title{
+  padding: 1rem;
+  background: #ffffff;
+}
 /* 
 ==============
 Services
@@ -532,17 +562,17 @@ Pricing
   grid-gap: 2rem 1rem;
   padding: 0 7vw;
 }
-.bordo-carta{
+.bordo-carta {
   width: 300px;
   height: auto;
-    border: solid 4px var(--colore-titolo);
-    border-radius: var(--radius);
+  border: solid 4px var(--colore-titolo);
   transition: 0.5s;
-    background-color: #fff;
-
+  background-color: #fff;
 }
 
 .card {
+  font-family: var(--ff-primary);
+
   /* margin: 0.5rem 1rem; */
   padding: 1rem;
   flex: 0 1 300px;
@@ -553,30 +583,32 @@ Pricing
   text-align: center;
   grid-template-columns: 1fr;
   grid-template-rows: 70px 70px 120px 70px 70px;
-  border-radius: var(--radius);
   transition: var(--transition);
-  border: solid 3px var(--colore-titolo);
-  margin: 2px;
+  border: solid 1px var(--colore-titolo);
+  margin: 3px;
 }
-.bordo-carta:hover{
-    transform: scale(1.05);
-    box-shadow: var(--dark-shadow);
+.bordo-carta:hover {
+  transform: scale(1.05);
+  box-shadow: var(--dark-shadow);
 }
 .pacchetto h1 {
   font-size: 30px;
   text-transform: uppercase;
   text-decoration: underline;
   background-color: transparent;
-  color: var(--colore-titolo)
+  color: var(--colore-titolo);
+  font-family: var(--ff-primary);
 }
 .pacchetto h4 {
   text-transform: capitalize;
-  color:var(--scurissimo-b);
+  color: var(--scurissimo-b);
   background-color: transparent;
+  font-style: italic;
+  font-family: var(--ff-second);
 }
 
-.pacchetto h3{
-      color: var(--colore-note)
+.pacchetto h3 {
+  color: var(--colore-note);
 }
 
 .pacchetto li {
@@ -584,18 +616,23 @@ Pricing
   list-style-type: circle;
   text-align: left;
   margin: 2px;
+  font-weight: 700;
+  font-family: var(--ff-second);
+}
+.pacchetto li::marker {
+  font-weight: 600;
 }
 
 .prezzo {
   font-size: 25px;
-
 }
 .note ul li {
   text-align: center;
   list-style-type: none;
   font-weight: bolder;
   font-size: medium;
-  color: var(--colore-note)
+  color: var(--colore-note);
+  font-family: var(--ff-second);
 }
 
 /*
@@ -671,6 +708,7 @@ Footer
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: center;
+  font-family: var(--ff-primary)
 }
 .footer section .email {
   color: var(--black);
@@ -686,10 +724,10 @@ Footer
   place-items: center;
   text-align: center;
 }
-.footer a:hover{
+.footer a:hover {
   color: var(--scurissimo-b);
 }
-.footer a:hover .service-icon:hover{
+.footer a:hover .service-icon:hover {
   color: var(--scurissimo-b);
 }
 
@@ -703,8 +741,8 @@ Footer
     align-items: center;
   }
 }
-@media screen and (max-width: 900px){
-  .footer .icon{
+@media screen and (max-width: 900px) {
+  .footer .icon {
     margin: 0 0.5rem;
   }
 }

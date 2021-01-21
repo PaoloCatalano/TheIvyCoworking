@@ -27,6 +27,7 @@ const CardPrezzi = () => {
       }
     }
   `)
+
   return (
     <>
       {nodes.map(
@@ -41,7 +42,7 @@ const CardPrezzi = () => {
           info,
         }) => {
           return (
-            <div key={contentfulid} className='bordo-carta'>
+            <div key={contentfulid} className="bordo-carta">
               <section className="pacchetto card">
                 {/**<div className="icone">{icon}</div>*/}
                 <h1>{titoloEn}</h1>

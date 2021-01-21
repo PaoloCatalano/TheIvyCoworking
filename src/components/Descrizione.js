@@ -16,7 +16,7 @@ const Descrizione = () => {
    `)
     return (
       <>
-        <div className="about">
+        <div className="about white">
           <div className="about-title">
             <h1>{data.desc.titoloEn}</h1>
             {/* <h3>Your coworking in El Clot!</h3> */}
