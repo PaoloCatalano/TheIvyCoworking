@@ -8,44 +8,30 @@ import Services from "../components/Services"
 import Contact from "../components/Contact"
 import Pricing from "../components/Pricing"
 import Section from "../components/Section"
-import Descrizione from '../components/Descrizione'
+import Descrizione from "../components/Descrizione"
 
 export default function Home() {
- 
-      // const query = useStaticQuery(graphql`
-      //   {
-      //     pic: contentfulFotoSfondo {
-      //       fotoSfondo {
-      //         fluid(maxWidth: 5963) {
-      //           ...GatsbyContentfulFluid
-      //         }
-      //       }
-      //     }
-      //   }
-      // `)
-
-
   return (
     <>
       <Navbar />
       <Slider />
       <main>
-          <div className="background">
-        <section>
+        <div className="background">
+          <section className="container-all">
             <Descrizione />
-        </section>
-          </div>
+          </section>
+        </div>
         <section>
           <div id="services" className="position"></div>
           <Section title={"services"} />
           <Services />
         </section>
         <section>
-          <div className='background'>
+          <div className="background">
             <div id="pricing" className="position"></div>
             <Section title={"pricing"} />
             <Pricing />
-            <div className='spazio' style={{height: 50}}></div>
+            <div className="spazio" style={{ height: 50 }}></div>
           </div>
         </section>
         <section>
@@ -54,9 +40,11 @@ export default function Home() {
           <About />
         </section>
         <section>
+          <div className="background">
             <div id="contact" className="position"></div>
             <Section title={"contact"} />
             <Contact />
+          </div>
         </section>
       </main>
       <Footer />

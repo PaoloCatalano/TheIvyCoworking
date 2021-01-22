@@ -23,7 +23,10 @@ const {data:{testo:{testo}}} = useStaticQuery(graphql`
     return (
       <div className="about">
         {/* <p>{testo}</p> */}
+        <div className='contenitore-about'>
         <ReactMarkdown source={testo} />
+
+        </div>
       </div>
     )
 }

@@ -27,6 +27,7 @@ Variables
   --medium: 400;
   --bold: 700;
   --schermo-stretto: 650px;
+  --schermo-medio: 870px;
 
   /* COOLORS */
   --trasparente: rgba(163, 163, 163, 0.705);
@@ -81,11 +82,9 @@ body {
   padding: 0;
   background: #ffffff;
   color: var(--scurissimo-b);
-  font-size: medium;
+  font-size: large;
   overflow-x: hidden;
-  font-family: var(--ff-second);
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-family: var(--ff-primary);
 }
 main {
   display: grid;
@@ -95,8 +94,15 @@ main {
 }
 .icone {
   color: var(--scurissimo-b);
+  font-size: 3rem;
+  transition: var(--transition);
+}
+@media screen and (min-width: 870px){
+  .icone {
+  color: var(--scurissimo-b);
   font-size: 5rem;
   transition: var(--transition);
+}
 }
 
 h3 {
@@ -186,10 +192,11 @@ a:hover {
   background: #fff;
   border: solid 1px #000000;
 }
-.spazio{
+.spazio {
   width: 100%;
   /*INLINE style={{height: 50}} */
 }
+
 /*=============== 
 Button
 ===============
@@ -229,7 +236,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 0.5rem 0 2rem;
 }
 .title-navbar {
   text-transform: uppercase;
@@ -424,34 +431,24 @@ Slider
 
 /* 
 ==============
-Background
-=============spazio
+Body
+=============
  */
-.background{
-  background-image: url("../../src/assets/sfondo.jpeg");
+ .container-all{
+   padding: 0 4vh;
+ }
+/* 
+==============
+Background
+=============
+ */
+.background {
+  /* background-image: url("../../src/assets/sfondo.jpeg"); */
   background-repeat: repeat;
   background-position: top;
   background-size: contain;
 }
 
-/* GATSBY-Background-Image */
-/* .background {
-  width: 100vw;
-  position: absolute;
-  top:0px;
-  padding: 0px;
-  overflow: hidden;
-  background-repeat: repeat !important;
-}
-.background:before,.background:after {
-  width: 100vw;
-  position: absolute;
-  top:0px;
-  padding: 0px;
-  background-size: auto !important;
-  background-repeat: repeat !important;
-  background-position: top;
-} */
 /* 
 ==============
 Descrizione
@@ -461,7 +458,8 @@ Descrizione
   /*classe di Descrizione*/
 }
 .about {
-  margin: 3rem 5vw;
+  margin: 3rem auto;
+  max-width: 35rem;
 }
 .about-title {
   text-align: center;
@@ -474,6 +472,7 @@ Descrizione
   font-family: var(--ff-primary);
   font-size: xx-large;
   font-weight: bolder;
+  color: var(--colore-titolo);
 }
 /* .about-title h1 span {
   color: var(--medio-b);
@@ -487,6 +486,9 @@ Descrizione
   letter-spacing: 1px;
   margin: 2rem;
   background-color: #fff;
+  font-family: var(--ff-second);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* 
@@ -494,6 +496,7 @@ Descrizione
 Section
 =============
 */
+
 .section {
   height: 30vh;
   width: 100vw;
@@ -510,16 +513,21 @@ Section
 }
 .depth {
   display: block;
-  padding: 50px;
+  padding: 2px;
   color: var(--scurissimo-o);
   font-weight: bold;
   position: relative;
   text-transform: uppercase;
   letter-spacing: var(--spacing);
+    border: solid 4px var(--colore-titolo);
+  background: #ffffff;
 }
-.section-title{
+.section-title {
   padding: 1rem;
   background: #ffffff;
+    border: solid 1px var(--colore-titolo);
+color: var(--colore-titolo);
+font-weight: bold;
 }
 /* 
 ==============
@@ -532,6 +540,8 @@ Services
   justify-content: center;
   padding: 0 5vw;
 }
+
+
 .contenitore-servizi p {
   text-align: center;
 }
@@ -539,15 +549,25 @@ Services
   color: var(--pink);
   /* filter: drop-shadow(var(--dark-shadow)); troppo lento */
 }
-
 .big {
   margin: auto;
+  width: 45px;
+}
+.servizio {
+  flex: 0 1 100px; /*  No stretching: */
+  margin: 2rem 0.3rem;
+}
+@media screen and (min-width:870px){
+  .big {
+    margin: auto;
   width: 85px;
 }
 .servizio {
   flex: 0 1 250px; /*  No stretching: */
-  margin: 2rem 1rem;
+  margin: 2rem 0.3rem;
 }
+}
+
 
 /* 
 ==============
@@ -618,6 +638,8 @@ Pricing
   margin: 2px;
   font-weight: 700;
   font-family: var(--ff-second);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 .pacchetto li::marker {
   font-weight: 600;
@@ -633,8 +655,18 @@ Pricing
   font-size: medium;
   color: var(--colore-note);
   font-family: var(--ff-second);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
+/*
+==============
+About
+==============
+*/
+.contenitore-about{
+  padding: 0 5vh;
+}
 /*
 ==============
 Contact
@@ -708,7 +740,7 @@ Footer
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: center;
-  font-family: var(--ff-primary)
+  font-family: var(--ff-primary);
 }
 .footer section .email {
   color: var(--black);
