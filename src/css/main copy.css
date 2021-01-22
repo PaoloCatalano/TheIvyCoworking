@@ -190,7 +190,6 @@ a:hover {
 }
 .white {
   background: #fff;
-  border: solid 1px #000000;
 }
 .spazio {
   width: 100%;
@@ -482,13 +481,14 @@ Descrizione
   margin: 3rem;
 } */
 .about p {
-  text-align: center;
+  text-align: justify;
   letter-spacing: 1px;
   margin: 2rem;
   background-color: #fff;
   font-family: var(--ff-second);
   font-weight: 600;
   letter-spacing: 0.5px;
+  /* line-height: 5px; */
 }
 
 /* 

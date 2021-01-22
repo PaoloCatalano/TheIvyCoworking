@@ -10,6 +10,7 @@ import Pricing from "../components/Pricing"
 import Section from "../components/Section"
 import Descrizione from "../components/Descrizione"
 
+
 export default function Home() {
   return (
     <>
