@@ -18,17 +18,17 @@ export default ({ styleClass }) => {
     {
       id: 1,
       icon: <FaFacebookSquare className="facebook icon" />,
-      url: `${facebookLink}`,
+      url: `${facebookLink || "https://www.facebook.com"}`,
     },
     {
       id: 2,
       icon: <FaWhatsapp className="whatsapp icon" />,
-      url: `https://wa.me/${whatsappNumber}`,
+      url: `https://wa.me/${whatsappNumber || "123456789"}`,
     },
     {
       id: 3,
       icon: <FaInstagramSquare className="instagram icon" />,
-      url: `${instagramLink}`,
+      url: `${instagramLink || "https://www.instagram.com"}`,
     },
   ]
 

@@ -5,7 +5,15 @@
  */
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "The Ivy Coworking",
+    titleTemplate: "%s · The Ivy Coworking",
+    description:
+      "For those looking for a cozy but functional workspace to be productive, meet people and drink good coffee!",
+    url: "https://www.theivycoworking.com", // No trailing slash allowed!
+    image: "/images/image.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@PaoroCatarano",
+  },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

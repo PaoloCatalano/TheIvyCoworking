@@ -8,17 +8,18 @@ import { AiOutlinePhone } from "react-icons/ai"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Footer = () => {
-  const { address, weekday, weekend, phone, email } = info
+  // const { address, weekday, weekend, phone, email } = info
 
   //Contentful
   const {
-    contentfulContatti: { indirizzo, orario, telefono },
+    contentfulContatti: { indirizzo, orario, telefono, email },
   } = useStaticQuery(graphql`
     {
       contentfulContatti {
         indirizzo
         orario
         telefono
+        email
       }
     }
   `)
@@ -45,19 +46,21 @@ const Footer = () => {
           >
             <GoLocation className="service-icon" />
           </a>
-          {indirizzo}
+          {indirizzo || info.address}
         </div>
         <div className="address">
           <BiTimeFive className="service-icon" />
-          <p>Mon - Fri: {orario}</p>
+          <p>Mon - Fri: {orario || info.weekday}</p>
         </div>
       </section>
       <section className="colonna">
         <Social styleClass={`social-icons`} />
-        <a href={`mailto:${email}`} className="email">{email}</a>
+        <a href={`mailto:${email}` || `mailto:${info.email}`} className="email">
+          {email || info.mail}
+        </a>
         <AiOutlinePhone className="service-icon" />
-        <a href={`tel:${telefono}`} >
-          {telefonoSpazi}
+        <a href={`tel:${telefono}` || `tel:${info.phone}`}>
+          {telefonoSpazi || info.phone}
         </a>
       </section>
     </div>

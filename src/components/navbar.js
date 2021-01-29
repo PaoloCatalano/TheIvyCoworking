@@ -4,6 +4,7 @@ import InAppNav from "../components/inAppNav"
 import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
+import { useStaticQuery, graphql } from "gatsby"
 
 
 
@@ -26,6 +27,15 @@ const Navbar = () => {
     }
   }, [showLinks])
 
+  const {
+    contentfulContatti: { email },
+  } = useStaticQuery(graphql`
+    {
+      contentfulContatti {
+        email
+      }
+    }
+  `)
 
   return (
     <nav className="navbar">
@@ -55,7 +65,7 @@ const Navbar = () => {
         </div>
         <section>
           <Social styleClass={`social-icons social-icons-navbar`} />
-          <p className="email email-nav">{info.email}</p>
+          <p className="email email-nav">{email || info.email}</p>
         </section>
       </div>
     </nav>

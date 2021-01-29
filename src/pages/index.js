@@ -9,13 +9,14 @@ import Contact from "../components/Contact"
 import Pricing from "../components/Pricing"
 import Section from "../components/Section"
 import Descrizione from "../components/Descrizione"
-
+import Seo from "../components/Seo"
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Slider />
+    <Seo title="Home"/>
       <main>
         <div className="background">
           <section className="container-all">
