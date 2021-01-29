@@ -8,7 +8,7 @@ Fonts
 /*
 =============== 
 Variables
-===============
+===============error-page
 */
 :root {
   --transition: all 0.3s linear;
@@ -139,7 +139,7 @@ a:hover {
 @media screen and (max-width: 550px) {
   .logo-small-slider {
     width: 90px;
-    height: 76px;
+    height: 80px;
   }
 }
 .cerchio {
@@ -226,10 +226,13 @@ nav {
   color: var(--scurissimo-o);
 }
 .navbar {
-  position: fixed;
-  width: 100vw;
-  /* position: sticky;
-  top: 0; */
+  /* bug che tutto va sotto la navbar */
+  /* position: fixed; 
+  width: 100vw; */
+
+    /* bug che sul cell il navigateTo() porta poco sotto il livello*/
+  position: sticky;
+  top: 0;
 }
 .nav-header {
   display: flex;
@@ -849,7 +852,6 @@ Rooms
   padding: 0;
   object-fit: cover;
   box-shadow: var(--dark-shadow);
-  border-bottom: solid 1px black;
 }
 .reverse {
   grid-column: 1 / 5;

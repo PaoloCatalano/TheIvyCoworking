@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
-import data2 from "../constants/data"
+// import data2 from "../constants/data"
 import logo from "../assets/logo2.png"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 
 function Slider() {
   const query = useStaticQuery(graphql`
@@ -13,16 +13,28 @@ function Slider() {
           id
           immagine {
             url: fluid {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_noBase64
             }
             name: title
+          }
+        }
+      }
+      logo: file(relativePath: { eq: "logo2.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
     }
   `)
 
-const { pics: {data}} = query;
+  const {
+    pics: { data },
+    logo: {
+      childImageSharp: { fluid },
+    },
+  } = query
 
   const [photos, setPhotos] = useState(data)
   const [index, setIndex] = React.useState(0)
@@ -70,7 +82,11 @@ const { pics: {data}} = query;
           </button>
           <div className="title">
             <div className="cerchio">
-              <img src={logo} alt="logo" className=" logo-small-slider logo" />
+              <Img
+                fluid={fluid}
+                alt="logo"
+                className=" logo-small-slider logo"
+              />
             </div>
           </div>
           <button className="next" onClick={nextSlide}>
@@ -99,7 +115,13 @@ const { pics: {data}} = query;
           return (
             <article className={`slide ${position}`} key={id}>
               {/* vecchio <img src={url} alt={name} className="img" /> */}
-              <Img fluid={url} alt={name} />
+              <Img
+                fluid={url}
+                alt={name}
+                backgroundColor="#ddbea9"
+                FadeIn={true}
+                durationFadeIn={2000}
+              />
             </article>
           )
         })}

@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Navbar />
       <Slider />
-    <Seo title="Home"/>
+      <Seo title="The Ivy Coworking Home" />
       <main>
         <div className="background">
           <section className="container-all">
