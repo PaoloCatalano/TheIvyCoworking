@@ -5,35 +5,22 @@ const Rooms = () => {
   return (
     <div>
       {rooms.map(room => {
-        const { id, url, name, desc } = room
+        const { id, url, name, url2 } = room
         let pari = true
         if (id % 2 !== 0) {
           pari = false
         }
 
-        
         return (
-            <section key={id} className="card-stanza">
-              <div className="contenitore">
-                <img
-                  src={url}
-                  alt={name}
-                  className={`box img-stanza ${pari && "reverse"}`}
-                />
-                <div className={`box desc ${pari && "right"}`}>
-                  <h2 className="titolo">{name}</h2>
-                  {desc.map(feat => {
-                    const { id, feature } = feat
-
-                    return (
-                      <li key={id}>
-                        <p>{feature}</p>
-                      </li>
-                    )
-                  })}
-                </div>
+          <section key={id} className="card-stanza ">
+            <div className="contenitore">
+              <img src={url} alt={name} className="box img stanza" />
+              <div className={`box desc ${pari && "pink-title"}`}>
+                <h2 className="titolo">{name}</h2>
               </div>
-            </section>
+              <img src={url2} alt={name} className="box img2 stanza" />
+            </div>
+          </section>
         )
       })}
     </div>
