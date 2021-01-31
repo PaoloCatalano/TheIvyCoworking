@@ -485,12 +485,12 @@ Descrizione
 } */
 .about p {
   text-align: justify;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px;
+  letter-spacing: 0.5px; */
   margin: 2rem;
   background-color: #fff;
   font-family: var(--ff-second);
   font-weight: 600;
-  letter-spacing: 0.5px;
   /* line-height: 5px; */
 }
 
@@ -580,7 +580,7 @@ Pricing
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  grid-gap: 2rem 1rem;
+  /* gap: 2rem 1rem; not supported on Safari */
   padding: 0 7vw;
 }
 .bordo-carta {
@@ -589,12 +589,12 @@ Pricing
   border: solid 4px var(--colore-titolo);
   transition: 0.5s;
   background-color: #fff;
+  margin: 1rem;
 }
 
 .card {
   font-family: var(--ff-primary);
 
-  /* margin: 0.5rem 1rem; */
   padding: 1rem;
   flex: 0 1 300px;
   height: 450px;
@@ -603,7 +603,7 @@ Pricing
   place-items: center;
   text-align: center;
   grid-template-columns: 1fr;
-  grid-template-rows: 70px 70px 120px 70px 70px;
+  /* grid-template-rows: 70px 70px 120px 70px 70px; */
   transition: var(--transition);
   border: solid 1px var(--colore-titolo);
   margin: 3px;
@@ -631,7 +631,9 @@ Pricing
 .pacchetto h3 {
   color: var(--colore-note);
 }
-
+.testo {
+  transform: translateX(6%);
+}
 .pacchetto li {
   color: var(--black);
   list-style-type: circle;
@@ -640,7 +642,7 @@ Pricing
   font-weight: 700;
   font-family: var(--ff-second);
   font-weight: 600;
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
 }
 .pacchetto li::marker {
   font-weight: 600;
