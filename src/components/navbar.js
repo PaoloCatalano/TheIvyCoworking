@@ -6,8 +6,6 @@ import info from "../constants/contact"
 import about from "../constants/about"
 import { useStaticQuery, graphql } from "gatsby"
 
-
-
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false)
   const linksContainerRef = useRef(null)
@@ -42,21 +40,31 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <div
+            aria-label="navbar"
+            role="button"
+            tabIndex="0"
             onClick={() => {
               setShowLinks(false)
             }}
+            onKeyDown={() => {
+              setShowLinks(false)
+            }}
           ></div>
-          <div className='title-navbar'>
-            {about.title}
-          </div>
+          <div className="title-navbar">{about.title}</div>
           <button className="nav-toggle" onClick={toggleLinks}>
             <FaBars className={`icone small ${showLinks && "icone-active"}`} />
           </button>
         </div>
         <div className="links-container" ref={linksContainerRef}>
           <div
+            aria-label="navbar"
+            role="button"
+            tabIndex="0"
             ref={linksRef}
             onClick={() => {
+              setShowLinks(false)
+            }}
+            onKeyDown={() => {
               setShowLinks(false)
             }}
           >

@@ -3,8 +3,6 @@ import { navigate } from "@reach/router"
 import Links from "../constants/links"
 
 const InAppNav = () => {
-
-  
   // React.useEffect(() => {
   //   // window.addEventListener("scroll", () => {})
   //   console.log(position)
@@ -16,6 +14,7 @@ const InAppNav = () => {
     <ul className="in-app-nav links">
       <li>
         <a
+          href="/"
           onClick={() => {
             navigate("/")
           }}
@@ -23,9 +22,10 @@ const InAppNav = () => {
           home
         </a>
       </li>
-      
+
       <li>
         <a
+          href="#services"
           onClick={e => {
             navigate("#services")
           }}
@@ -36,6 +36,7 @@ const InAppNav = () => {
 
       <li>
         <a
+          href="#pricing"
           onClick={() => {
             navigate("#pricing")
           }}
@@ -45,6 +46,7 @@ const InAppNav = () => {
       </li>
       <li>
         <a
+          href="#about"
           onClick={() => {
             navigate("#about")
           }}
@@ -54,6 +56,7 @@ const InAppNav = () => {
       </li>
       <li>
         <a
+          href="#contact"
           onClick={() => {
             navigate("#contact")
           }}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
 // import data2 from "../constants/data"
-import logo from "../assets/logo2.png"
+// import logo from "../assets/logo2.png"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -71,7 +71,7 @@ function Slider() {
     return () => {
       clearInterval(slider)
     }
-  }, [index])
+  }, [index, photos])
 
   return (
     <section className="slider">

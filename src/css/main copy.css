@@ -589,7 +589,18 @@ Pricing
   border: solid 4px var(--colore-titolo);
   transition: 0.5s;
   background-color: #fff;
+  /* per sopperire al non supporto di FLEX -> GAP in Safari */
   margin: 1rem 0.5rem;
+}
+
+/* eliminare margine destro */
+@media screen and (max-width: 600px) {
+  .bordo-carta {
+    margin: 1rem 0.1rem;
+  }
+  .contenitore-pacchetti {
+    padding: 0 0.1vw;
+  }
 }
 
 .card {
@@ -649,7 +660,7 @@ Pricing
 }
 
 .prezzo {
-  font-size: 25px;
+  font-size: 35px;
 }
 .note ul li {
   text-align: center;

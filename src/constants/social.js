@@ -35,14 +35,17 @@ export default ({ styleClass }) => {
   const links = data.map(link => {
     return (
       <li key={link.id}>
-        <a href={link.url} target="_blank" className="social-link"
+        <a
+          href={link.url}
+          target="_blank"
+          className="social-link"
+          rel="noopener"
         >
           {link.icon}
         </a>
       </li>
     )
   })
-
 
   return (
     <section>
