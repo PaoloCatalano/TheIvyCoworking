@@ -589,7 +589,7 @@ Pricing
   border: solid 4px var(--colore-titolo);
   transition: 0.5s;
   background-color: #fff;
-  margin: 1rem;
+  margin: 1rem 0.5rem;
 }
 
 .card {

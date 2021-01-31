@@ -1,11 +1,48 @@
 import React from "react"
-import rooms from "../constants/rooms"
+// import rooms from "../constants/rooms"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Rooms = () => {
+  const data = useStaticQuery(graphql`
+    {
+      pics: allContentfulFotoGallery {
+        nodes {
+          id
+          titolo
+          foto1 {
+            fluid {
+              ...GatsbyContentfulFluid_noBase64
+            }
+          }
+          foto2 {
+            fluid {
+              ...GatsbyContentfulFluid_noBase64
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const stanze = data.pics.nodes.map(stanza => {
+    const newStanze = {
+      id: stanza.id,
+      name: stanza.titolo,
+      url: stanza.foto1.fluid,
+      url2: stanza.foto2.fluid,
+    }
+
+    return newStanze
+  })
+
   return (
     <div>
-      {rooms.map(room => {
+      {stanze.map(room => {
         const { id, url, name, url2 } = room
+
+        // const {pics:{nodes:{id, name, url, url2}}} = data;
+
         let pari = true
         if (id % 2 !== 0) {
           pari = false
@@ -14,11 +51,25 @@ const Rooms = () => {
         return (
           <section key={id} className="card-stanza ">
             <div className="contenitore">
-              <img src={url} alt={name} className="box img stanza" />
+              <Img
+                fluid={url}
+                alt={name}
+                className="box img stanza"
+                backgroundColor="#ddbea9"
+                FadeIn={true}
+                durationFadeIn={2000}
+              />
               <div className={`box desc ${pari && "pink-title"}`}>
                 <h2 className="titolo">{name}</h2>
               </div>
-              <img src={url2} alt={name} className="box img2 stanza" />
+              <Img
+                fluid={url2}
+                alt={name}
+                className="box img2 stanza"
+                backgroundColor="#ddbea9"
+                FadeIn={true}
+                durationFadeIn={2000}
+              />
             </div>
           </section>
         )
