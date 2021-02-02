@@ -1,5 +1,6 @@
 import React from "react"
-import { FaInstagramSquare, FaFacebookSquare, FaWhatsapp } from "react-icons/fa"
+import { FaFacebookSquare, FaWhatsapp } from "react-icons/fa"
+import { FiInstagram } from "react-icons/fi"
 import { useStaticQuery, graphql } from "gatsby"
 
 export default ({ styleClass }) => {
@@ -17,17 +18,17 @@ export default ({ styleClass }) => {
   const data = [
     {
       id: 1,
-      icon: <FaFacebookSquare className="facebook icon" />,
-      url: `${facebookLink || "https://www.facebook.com"}`,
-    },
-    {
-      id: 2,
       icon: <FaWhatsapp className="whatsapp icon" />,
       url: `https://wa.me/${whatsappNumber || "123456789"}`,
     },
     {
+      id: 2,
+      icon: <FaFacebookSquare className="facebook icon" />,
+      url: `${facebookLink || "https://www.facebook.com"}`,
+    },
+    {
       id: 3,
-      icon: <FaInstagramSquare className="instagram icon" />,
+      icon: <FiInstagram className="instagram icon" />,
       url: `${instagramLink || "https://www.instagram.com"}`,
     },
   ]

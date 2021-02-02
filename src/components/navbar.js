@@ -73,7 +73,12 @@ const Navbar = () => {
         </div>
         <section>
           <Social styleClass={`social-icons social-icons-navbar`} />
-          <p className="email email-nav">{email || info.email}</p>
+          <a
+            href={`mailto:${email}` || `mailto:${info.email}`}
+            className="email email-nav"
+          >
+            {email || info.mail}
+          </a>
         </section>
       </div>
     </nav>

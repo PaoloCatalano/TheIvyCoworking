@@ -58,14 +58,15 @@ const Footer = () => {
         <a href={`mailto:${email}` || `mailto:${info.email}`} className="email">
           {email || info.mail}
         </a>
-        <AiOutlinePhone className="service-icon" />
-        <a href={`tel:${telefono}` || `tel:${info.phone}`}>
-          {telefonoSpazi || info.phone}
-        </a>
+        <div className="telephone-box">
+          <AiOutlinePhone className="service-icon" />
+          <a href={`tel:${telefono}` || `tel:${info.phone}`}>
+            {telefonoSpazi || info.phone}
+          </a>
+        </div>
       </section>
     </div>
   )
 }
-
 
 export default Footer

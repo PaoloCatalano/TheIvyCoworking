@@ -6,7 +6,9 @@ import Img from "gatsby-image"
 const Rooms = () => {
   const data = useStaticQuery(graphql`
     {
-      pics: allContentfulFotoGallery {
+      pics: allContentfulFotoGallery(
+        sort: { fields: ordineDisposizione, order: ASC }
+      ) {
         nodes {
           id
           titolo
@@ -43,11 +45,6 @@ const Rooms = () => {
 
         // const {pics:{nodes:{id, name, url, url2}}} = data;
 
-        let pari = true
-        if (id % 2 !== 0) {
-          pari = false
-        }
-
         return (
           <section key={id} className="card-stanza ">
             <div className="contenitore">
@@ -59,7 +56,7 @@ const Rooms = () => {
                 FadeIn={true}
                 durationFadeIn={2000}
               />
-              <div className={`box desc ${pari && "pink-title"}`}>
+              <div className="box desc">
                 <h2 className="titolo">{name}</h2>
               </div>
               <Img

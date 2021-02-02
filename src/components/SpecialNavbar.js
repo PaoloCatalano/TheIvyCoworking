@@ -2,10 +2,20 @@ import React from "react"
 import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
-import { Link } from "gatsby"
 import { GoArrowLeft } from "react-icons/go"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const SpecialNavbar = () => {
+  const {
+    contentfulContatti: { email },
+  } = useStaticQuery(graphql`
+    {
+      contentfulContatti {
+        email
+      }
+    }
+  `)
+
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -16,13 +26,18 @@ const SpecialNavbar = () => {
           <button className="btn">
             <Link to="/">
               <GoArrowLeft className="arrow" />
-               back to home
+              back to home
             </Link>
           </button>
         </div>
         <section>
           <Social styleClass={`social-icons social-icons-navbar`} />
-          <p className="email email-nav">{info.email}</p>
+          <a
+            href={`mailto:${email}` || `mailto:${info.email}`}
+            className="email email-nav"
+          >
+            {email || info.mail}
+          </a>
         </section>
       </div>
     </nav>
