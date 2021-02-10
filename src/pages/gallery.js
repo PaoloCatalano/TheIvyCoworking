@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 import Rooms from "../components/Rooms"
 import Section from "../components/Section"
 import Seo from "../components/Seo"
-import LanguageButtonSpecial from "../components/LanguageButtonSpecial"
+import LanguageButtonSpecial from "../components/languageButtonSpecial"
 
 const Gallery = () => {
   return (

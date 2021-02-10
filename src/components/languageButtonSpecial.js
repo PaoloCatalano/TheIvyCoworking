@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const LanguageButtonSpecial = () => {
+const LanguageButton = () => {
   return (
     <div className="btn-container-flex">
       <button>
@@ -32,4 +32,4 @@ const LanguageButtonSpecial = () => {
   )
 }
 
-export default LanguageButtonSpecial
+export default LanguageButton
