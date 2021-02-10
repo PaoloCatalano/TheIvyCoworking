@@ -2,7 +2,7 @@ import React from "react"
 import { navigate } from "@reach/router"
 import Links from "../constants/links"
 
-const InAppNav = () => {
+const InAppNav = ({ lang }) => {
   // React.useEffect(() => {
   //   // window.addEventListener("scroll", () => {})
   //   console.log(position)
@@ -14,9 +14,9 @@ const InAppNav = () => {
     <ul className="in-app-nav links">
       <li>
         <a
-          href="/"
+          href="#top"
           onClick={() => {
-            navigate("/")
+            navigate("#top")
           }}
         >
           home
@@ -30,7 +30,7 @@ const InAppNav = () => {
             navigate("#services")
           }}
         >
-          services
+          {lang === "es" ? "servicios" : lang === "ca" ? "serveis" : "services"}
         </a>
       </li>
 
@@ -41,7 +41,7 @@ const InAppNav = () => {
             navigate("#pricing")
           }}
         >
-          pricing
+          {lang === "es" ? "tarifas" : lang === "ca" ? "tarifes" : "pricing"}
         </a>
       </li>
       <li>
@@ -61,10 +61,10 @@ const InAppNav = () => {
             navigate("#contact")
           }}
         >
-          contact
+          {lang === "es" ? "contacto" : lang === "ca" ? "contactes" : "contact"}
         </a>
       </li>
-      <Links />
+      <Links lang={lang} />
     </ul>
   )
 }

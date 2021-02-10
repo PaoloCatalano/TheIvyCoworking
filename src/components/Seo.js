@@ -31,6 +31,8 @@ const SEO = ({ title, description, image, article, lang }) => {
       htmlAttributes={{ lang: `${lang || "en"}` }}
     >
       <link rel="alternate" hreflang="en" href={`${siteUrl}`} />
+      <link rel="alternate" hreflang="es" href={`${siteUrl}/es/`} />
+      <link rel="alternate" hreflang="ca" href={`${siteUrl}/ca/`} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 

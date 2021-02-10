@@ -52,7 +52,7 @@ const CardPrezzi = () => {
                 </div>
                 <h3>
                   <span className="prezzo"> € {prezzoEn}</span>
-                  {mensile && <span> month</span>} + VAT{" "}
+                  {mensile && <span>/month</span>} + VAT{" "}
                 </h3>
                 <div className="note">
                   {note && <ReactMarkdown source={info.noteEn} />}

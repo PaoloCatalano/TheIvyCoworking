@@ -14,6 +14,7 @@ import Seo from "../components/Seo"
 export default function Home() {
   return (
     <>
+      <div id="top" className="position"></div>
       <Navbar />
       <Slider />
       <Seo title="The Ivy Coworking Home" />

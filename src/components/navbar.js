@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from "react"
 import { FaBars } from "react-icons/fa"
 import InAppNav from "../components/inAppNav"
+import LanguageButton from "../components/languageButton"
 import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Navbar = () => {
+const Navbar = ({ lang }) => {
   const [showLinks, setShowLinks] = useState(false)
   const linksContainerRef = useRef(null)
   const linksRef = useRef(null)
@@ -68,7 +69,10 @@ const Navbar = () => {
               setShowLinks(false)
             }}
           >
-            <InAppNav />
+            <div className="linkElang">
+              <InAppNav lang={lang} />
+              <LanguageButton />
+            </div>
           </div>
         </div>
         <section>

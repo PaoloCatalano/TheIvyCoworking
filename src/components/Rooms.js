@@ -3,7 +3,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Rooms = () => {
+const Rooms = ({ esp, cat }) => {
   const data = useStaticQuery(graphql`
     {
       pics: allContentfulFotoGallery(
@@ -12,6 +12,8 @@ const Rooms = () => {
         nodes {
           id
           titolo
+          titoloEsp
+          titoloCat
           foto1 {
             fluid {
               ...GatsbyContentfulFluid_noBase64
@@ -31,6 +33,8 @@ const Rooms = () => {
     const newStanze = {
       id: stanza.id,
       name: stanza.titolo,
+      nameEsp: stanza.titoloEsp,
+      nameCat: stanza.titoloCat,
       url: stanza.foto1.fluid,
       url2: stanza.foto2.fluid,
     }
@@ -41,7 +45,7 @@ const Rooms = () => {
   return (
     <div>
       {stanze.map(room => {
-        const { id, url, name, url2 } = room
+        const { id, url, name, nameEsp, nameCat, url2 } = room
 
         // const {pics:{nodes:{id, name, url, url2}}} = data;
 
@@ -57,7 +61,9 @@ const Rooms = () => {
                 durationFadeIn={2000}
               />
               <div className="box desc">
-                <h2 className="titolo">{name}</h2>
+                <h2 className="titolo">
+                  {esp && nameEsp ? nameEsp : cat ? nameCat : name}
+                </h2>
               </div>
               <Img
                 fluid={url2}

@@ -69,6 +69,42 @@ Variables
   /* bordi per iniziare */
   /* border: 1px solid rgb(169, 190, 197); */
 }
+*::selection {
+  background-color: var(--chiaro-b);
+  color: var(--scurissimo-o-deco);
+}
+*::selection:window-inactive {
+  background-color: var(--chiarissimo-o);
+  color: var(--scurissimo-o-deco);
+}
+*::-webkit-scrollbar {
+  width: 14px;
+}
+*::-webkit-scrollbar-button {
+  height: 15px;
+  background-color: var(--medio-b-deco);
+  box-shadow: inset var(--light-shadow);
+}
+*::-webkit-scrollbar-button:window-inactive {
+  background-color: var(--scurissimo-o-deco);
+  height: 15px;
+}
+*::-webkit-scrollbar-button:hover {
+  background-color: var(--scurissimo-o);
+}
+*::-webkit-scrollbar-track {
+  background: var(--gray);
+}
+*::-webkit-scrollbar-track:window-inactive {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--medio-b-deco);
+}
+*::-webkit-scrollbar-thumb:window-inactive {
+  background-color: var(--scurissimo-o-deco);
+}
 html {
   scroll-behavior: auto;
 }
@@ -296,11 +332,29 @@ nav {
 .show-container {
   height: 10rem;
 }
+.btn-container-flex {
+  display: flex;
 
-@media screen and (min-width: 900px) {
+  flex-direction: row-reverse;
+  margin: 0 0.5rem;
+  transform: translate(250px, -50px);
+  position: fixed;
+  z-index: 999999999;
+}
+@media screen and (max-width: 400px) {
+  .btn-container-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 0.5rem;
+    transform: translate(0, 0);
+    position: static;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 915px) {
   .nav-center {
-    max-width: 95vw;
-    margin: 0 1rem;
+    max-width: 100vw;
+    margin: 0 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -319,6 +373,7 @@ nav {
   }
   .links-container {
     height: auto !important;
+    width: 100%;
   }
   .links {
     display: flex;
@@ -342,10 +397,27 @@ nav {
   .email-nav {
     display: block;
   }
+  .social-icons a {
+    font-size: 35px;
+  }
+  .linkElang {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .btn-container {
+    margin: 0 0.5rem;
+  }
+  .btn-container-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 0.5rem;
+    transform: translate(0, 0);
+    position: static;
+    z-index: 1;
+  }
 }
-.social-icons a {
-  font-size: 35px;
-}
+
 /*
 =============== 
 Slider
@@ -660,7 +732,6 @@ Pricing
   font-weight: 700;
   font-family: var(--ff-second);
   font-weight: 600;
-  /* letter-spacing: 0.5px; */
 }
 .pacchetto li::marker {
   font-weight: 600;
@@ -669,7 +740,7 @@ Pricing
 .prezzo {
   font-size: 35px;
 }
-.note ul li {
+.note p {
   text-align: center;
   list-style-type: none;
   font-weight: bolder;

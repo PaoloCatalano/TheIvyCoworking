@@ -13,11 +13,13 @@ module.exports = {
     url: "https://www.theivycoworking.com", // No trailing slash allowed!
     image: "/image.jpg", // Path to your image you placed in the 'static' folder
     twitterUsername: "@PaoroCatarano",
+    siteUrl: `https://www.theivycoworking.com`, // for sitemap
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,7 +31,6 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `w14h13xgb84i`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },

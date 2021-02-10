@@ -5,7 +5,7 @@ import about from "../constants/about"
 import { GoArrowLeft } from "react-icons/go"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-const SpecialNavbar = () => {
+const SpecialNavbar = ({ esp, cat }) => {
   const {
     contentfulContatti: { email },
   } = useStaticQuery(graphql`
@@ -24,10 +24,22 @@ const SpecialNavbar = () => {
         </div>
         <div>
           <button className="btn">
-            <Link to="/">
-              <GoArrowLeft className="arrow" />
-              back to home
-            </Link>
+            {esp ? (
+              <Link to="/es/home">
+                <GoArrowLeft className="arrow" />
+                voler a home
+              </Link>
+            ) : cat ? (
+              <Link to="/ca/home">
+                <GoArrowLeft className="arrow" />
+                tornar a home
+              </Link>
+            ) : (
+              <Link to="/">
+                <GoArrowLeft className="arrow" />
+                back to home
+              </Link>
+            )}
           </button>
         </div>
         <section>
