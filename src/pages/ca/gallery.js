@@ -14,6 +14,8 @@ const Gallery = () => {
         title="The Ivy Coworking Gallery"
         lang="ca"
         description="El nostre coworking se situa en un local de 160 m2 distrubuidos en dues plantes. És un acollidor espai, en el qual poder refugiar-se dels sorolls de la ciutat, però tot i així, estar a pocs minuts d'ella."
+        keywords="SALA REUNIONS, CABINA TELEFÒNICA, PATI SECRET, ZONA CHILL I MENJADOR
+"
       />
       <SpecialNavbar cat />
       <LanguageButtonSpecial />

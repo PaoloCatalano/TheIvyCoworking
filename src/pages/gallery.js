@@ -9,7 +9,10 @@ import LanguageButtonSpecial from "../components/languageButtonSpecial"
 const Gallery = () => {
   return (
     <>
-      <Seo title="The Ivy Coworking Gallery" />
+      <Seo
+        title="The Ivy Coworking Gallery"
+        keywords="kitchen, FIRST FLOOR WORKSPACE, MEETING ROOM, GROUND FLOOR WORKSPACE, PHONE BOOTH, SECRET PATIO, CHILL AREA, DINING AREA"
+      />
       <SpecialNavbar />
       <LanguageButtonSpecial />
       <Section title="gallery" />

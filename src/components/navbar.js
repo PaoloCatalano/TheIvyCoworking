@@ -57,22 +57,21 @@ const Navbar = ({ lang }) => {
           </button>
         </div>
         <div className="links-container" ref={linksContainerRef}>
-          <div
-            aria-label="navbar"
-            role="button"
-            tabIndex="0"
-            ref={linksRef}
-            onClick={() => {
-              setShowLinks(false)
-            }}
-            onKeyDown={() => {
-              setShowLinks(false)
-            }}
-          >
-            <div className="linkElang">
+          <div ref={linksRef} className="linkElang">
+            <div
+              aria-label="navbar"
+              role="button"
+              tabIndex="0"
+              onClick={() => {
+                setShowLinks(false)
+              }}
+              onKeyDown={() => {
+                setShowLinks(false)
+              }}
+            >
               <InAppNav lang={lang} />
-              <LanguageButton />
             </div>
+            <LanguageButton />
           </div>
         </div>
         <section>

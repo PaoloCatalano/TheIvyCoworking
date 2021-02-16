@@ -117,7 +117,10 @@ function Slider() {
               {/* vecchio <img src={url} alt={name} className="img" /> */}
               <Img
                 fluid={url}
-                alt={name}
+                alt={
+                  "The Ivy Coworking Barcelona Marianna Catalano Viola Salvadori amigurumi" +
+                  name
+                }
                 backgroundColor="#ddbea9"
                 FadeIn={true}
                 durationFadeIn={2000}

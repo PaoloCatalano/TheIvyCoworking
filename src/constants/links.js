@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 const data = [
@@ -24,33 +24,24 @@ const dataCat = [
 ]
 
 export default ({ lang }) => {
-  //mappare ogni elemnto dell'array data
-  let tempLinks = []
-  if (lang === "es") {
-    return (tempLinks = dataEsp.map(link => {
-      return (
-        <li key={link.id}>
-          <Link to={link.url}>{link.text}</Link>
-        </li>
-      )
-    }))
-  }
-  if (lang === "ca") {
-    return (tempLinks = dataCat.map(link => {
-      return (
-        <li key={link.id}>
-          <Link to={link.url}>{link.text}</Link>
-        </li>
-      )
-    }))
-  } else {
-    tempLinks = data.map(link => {
-      return (
-        <li key={link.id}>
-          <Link to={link.url}>{link.text}</Link>
-        </li>
-      )
-    })
-  }
+  const [links, setLinks] = useState([])
+
+  useEffect(() => {
+    if (lang === "es") {
+      setLinks(dataEsp)
+    } else if (lang === "ca") {
+      setLinks(dataCat)
+    } else {
+      setLinks(data)
+    }
+  }, [lang])
+
+  const tempLinks = links.map(link => {
+    return (
+      <li key={link.id}>
+        <Link to={link.url}>{link.text}</Link>
+      </li>
+    )
+  })
   return tempLinks
 }

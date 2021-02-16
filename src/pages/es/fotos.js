@@ -14,6 +14,7 @@ const Fotos = () => {
         title="The Ivy Coworking Fotos"
         lang="es"
         description="Nuestro coworking se sitúa en un local de 160 m2 distrubuidos en dos plantas. Es un acogedor espacio, en el que poder refugiarse de los ruidos de la ciudad, pero aún así, estar a dos pasos de ella."
+        keywords="SALA REUNIONS, CABINA TELEFÒNICA, PATIO SECRETO, ZONA CHILL Y COMEDOR"
       />
       <SpecialNavbar esp />
       <LanguageButtonSpecial />

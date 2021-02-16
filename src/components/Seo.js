@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, article, lang }) => {
+const SEO = ({ title, description, image, article, lang, keywords }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -34,6 +34,13 @@ const SEO = ({ title, description, image, article, lang }) => {
       <link rel="alternate" hreflang="es" href={`${siteUrl}/es/`} />
       <link rel="alternate" hreflang="ca" href={`${siteUrl}/ca/`} />
       <meta name="description" content={seo.description} />
+      <meta
+        name="keywords"
+        content={
+          `ivy, coworking, Barcelona, Spain, Barcellona, workspace, Marianna, Viola, caffe, cafe, coffee, drink, tea, free, ` +
+          keywords
+        }
+      />
       <meta name="image" content={seo.image} />
 
       {seo.url && <meta property="og:url" content={seo.url} />}

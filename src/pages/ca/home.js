@@ -28,6 +28,7 @@ export default function Home() {
       }
     }
   `)
+
   return (
     <>
       <div id="top" className="position"></div>
@@ -37,7 +38,8 @@ export default function Home() {
       <Seo
         title="The Ivy Coworking Home"
         lang="ca"
-        description="El nostre coworking se situa en un local de 160 m2 distrubuidos en dues plantes. És un acollidor espai, en el qual poder refugiar-se dels sorolls de la ciutat, però tot i així, estar a pocs minuts d'ella."
+        description={descCat.descrizioneCat.descrizioneCat}
+        keywords="Espanya, treball, espai"
       />
       <main>
         <div className="background">
@@ -47,13 +49,13 @@ export default function Home() {
         </div>
         <section>
           <div id="services" className="position"></div>
-          <Section title={"servicios"} />
+          <Section title={"serveis"} />
           <Services lang="ca" />
         </section>
         <section>
           <div className="background">
             <div id="pricing" className="position"></div>
-            <Section title={"tarifas"} />
+            <Section title={"tarifes"} />
             <Pricing cat />
             <div className="spazio" style={{ height: 50 }}></div>
           </div>
@@ -66,7 +68,7 @@ export default function Home() {
         <section>
           <div className="background">
             <div id="contact" className="position"></div>
-            <Section title={"contacto"} />
+            <Section title={"contactes"} />
             <Contact lang="ca" />
           </div>
         </section>

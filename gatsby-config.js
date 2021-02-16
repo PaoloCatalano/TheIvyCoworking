@@ -7,7 +7,7 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
 module.exports = {
   siteMetadata: {
     title: "The Ivy Coworking",
-    titleTemplate: "%s · The Ivy Coworking",
+    titleTemplate: "%s · The Ivy Coworking Barcelona",
     description:
       "For those looking for a cozy but functional workspace to be productive, meet people and drink good coffee!",
     url: "https://www.theivycoworking.com", // No trailing slash allowed!

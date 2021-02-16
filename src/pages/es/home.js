@@ -37,7 +37,8 @@ export default function Home() {
       <Seo
         title="The Ivy Coworking Home"
         lang="es"
-        description="Nuestro coworking se sitúa en un local de 160 m2 distrubuidos en dos plantas. Es un acogedor espacio, en el que poder refugiarse de los ruidos de la ciudad, pero aún así, estar a dos pasos de ella."
+        description={descrizioneEsp.descEsp.descrizioneEn}
+        keywords="trabajo, España, espacio"
       />
       <main>
         <div className="background">

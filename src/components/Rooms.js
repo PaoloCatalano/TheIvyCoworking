@@ -54,7 +54,13 @@ const Rooms = ({ esp, cat }) => {
             <div className="contenitore">
               <Img
                 fluid={url}
-                alt={name}
+                alt={
+                  nameEsp +
+                  " " +
+                  nameCat +
+                  " The Ivy Coworking Barcelona " +
+                  name
+                }
                 className="box img stanza"
                 backgroundColor="#ddbea9"
                 FadeIn={true}
@@ -67,7 +73,13 @@ const Rooms = ({ esp, cat }) => {
               </div>
               <Img
                 fluid={url2}
-                alt={name}
+                alt={
+                  nameEsp +
+                  " " +
+                  nameCat +
+                  " The Ivy Coworking Barcelona " +
+                  name
+                }
                 className="box img2 stanza"
                 backgroundColor="#ddbea9"
                 FadeIn={true}
