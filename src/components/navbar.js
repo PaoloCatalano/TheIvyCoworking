@@ -6,6 +6,7 @@ import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
 import { useStaticQuery, graphql } from "gatsby"
+import Popup from "../components/Popup"
 
 const Navbar = ({ lang }) => {
   const [showLinks, setShowLinks] = useState(false)
@@ -36,8 +37,13 @@ const Navbar = ({ lang }) => {
     }
   `)
 
+  // pupup
+  const [clicked, setClicked] = useState(false)
+
   return (
     <nav className="navbar">
+      <Popup setClicked={setClicked} clicked={clicked} />
+
       <div className="nav-center">
         <div className="nav-header">
           <div

@@ -1,7 +1,6 @@
 import React from "react"
 import Navbar from "../components/navbar"
 import Footer from "../components/Footer"
-// import Layout from "../components/Layout"
 import Slider from "../components/slider"
 import About from "../components/About"
 import Services from "../components/Services"
