@@ -1,28 +1,48 @@
 import React from "react"
 import { Link } from "gatsby"
-const Popup = ({ setClicked, clicked }) => {
-  const hidePopup = () => {
-    setClicked(true)
-  }
+import { useLocation } from "@reach/router" // this helps tracking the location
+import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies"
+import CookieConsent, { Cookies } from "react-cookie-consent"
+
+const Popup = () => {
+  const location = useLocation()
 
   return (
-    <div className={`popup ${clicked ? "hidePopup" : ""}`}>
-      <div>
-        Esta web usa cookies Las cookies de este sitio web se usan para
-        personalizar el contenido y los anuncios, ofrecer funciones de redes
-        sociales y analizar el tráfico. Además, compartimos información sobre el
-        uso que haga del sitio web con nuestros partners de redes sociales,
-        publicidad y análisis web, quienes pueden combinarla con otra
-        información que les haya proporcionado o que hayan recopilado a partir
-        del uso que haya hecho de sus servicios. 
-        <p>
-          <button onClick={hidePopup}>OK</button>
-          <button>
-            <Link to="/privacy-policy/">Leer más</Link>
-          </button>
-        </p>
-      </div>
-    </div>
+    <CookieConsent
+      style={{ background: "#2B373B" }}
+      buttonStyle={{ color: "#4e503b", fontSize: "14px", fontWeight: "bold" }}
+      expires={150}
+      cookieName="gatsby-gdpr-facebook-pixel"
+      flipButtons
+      ariaAcceptLabel
+      onAccept={() => {
+        initializeAndTrack(location)
+        console.log("Cookies accepted")
+      }}
+      location="bottom"
+      buttonText="ACEPTA"
+      enableDeclineButton
+      declineButtonText="no"
+      ariaDeclineLabel
+      declineButtonStyle={{
+        padding: 5,
+        margin: 9,
+        textTransform: "capitalize",
+        backgroundColor: "#2B373B",
+      }}
+      onDecline={() => {
+        console.log("Cookies not accepted")
+      }}
+    >
+      Esta web utiliza cookies. Acepta antes de utilizar nuestra web.{" "}
+      <span style={{ fontSize: "10px" }}>
+        Al utilizar este sitio, acepta nuestros{" "}
+        <Link style={{ color: "#7aaec2" }} to="/privacy-policy/">
+          POLÍTICA DE COOKIES
+        </Link>
+        .
+      </span>
+    </CookieConsent>
   )
 }
 

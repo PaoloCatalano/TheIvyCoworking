@@ -1,14 +1,16 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useContext } from "react"
 import { FaBars } from "react-icons/fa"
 import InAppNav from "../components/inAppNav"
 import LanguageButton from "../components/languageButton"
 import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
+import { Context } from "../context/context"
 import { useStaticQuery, graphql } from "gatsby"
 import Popup from "../components/Popup"
 
 const Navbar = ({ lang }) => {
+  const { accepted, setAccepted } = useContext(Context)
   const [showLinks, setShowLinks] = useState(false)
   const linksContainerRef = useRef(null)
   const linksRef = useRef(null)
@@ -37,12 +39,9 @@ const Navbar = ({ lang }) => {
     }
   `)
 
-  // pupup
-  const [clicked, setClicked] = useState(false)
-
   return (
     <nav className="navbar">
-      <Popup setClicked={setClicked} clicked={clicked} />
+      <Popup />
 
       <div className="nav-center">
         <div className="nav-header">

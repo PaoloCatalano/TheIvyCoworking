@@ -1,6 +1,7 @@
 import React from "react"
 import SpecialNavbar from "../components/SpecialNavbar"
 import Section from "../components/Section"
+import Footer from "../components/Footer"
 
 const privacyPolicy = () => {
   return (
@@ -123,6 +124,7 @@ const privacyPolicy = () => {
           </a>
         </p>
       </section>
+      <Footer />
     </>
   )
 }

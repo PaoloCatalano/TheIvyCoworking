@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import Social from "../constants/social"
 import info from "../constants/contact"
 import about from "../constants/about"
 import { GoArrowLeft } from "react-icons/go"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { Context } from "../context/context"
+import Popup from "../components/Popup"
 
 const SpecialNavbar = ({ esp, cat }) => {
+  const { accepted, setAccepted } = useContext(Context)
   const {
     contentfulContatti: { email },
   } = useStaticQuery(graphql`
@@ -18,6 +21,8 @@ const SpecialNavbar = ({ esp, cat }) => {
 
   return (
     <nav className="navbar">
+      <Popup />
+
       <div className="nav-center">
         <div className="nav-header">
           <div className="title-navbar fixed">{about.title}</div>
