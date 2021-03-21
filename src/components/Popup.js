@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { useLocation } from "@reach/router" // this helps tracking the location
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies"
-import CookieConsent, { Cookies } from "react-cookie-consent"
+import CookieConsent from "react-cookie-consent"
 
 const Popup = () => {
   const location = useLocation()
@@ -11,7 +11,7 @@ const Popup = () => {
     <CookieConsent
       style={{ background: "#2B373B" }}
       buttonStyle={{ color: "#4e503b", fontSize: "14px", fontWeight: "bold" }}
-      expires={150}
+      expires={90}
       cookieName="gatsby-gdpr-facebook-pixel"
       flipButtons
       ariaAcceptLabel

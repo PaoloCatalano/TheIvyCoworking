@@ -4,6 +4,7 @@ Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap");
 /*
 =============== 
@@ -23,6 +24,7 @@ Variables
   --font-size: 50px;
   --ff-primary: "Sulphur Point", sans-serif;
   --ff-second: "Bodoni Moda", serif;
+  --ff-third: "Raleway", serif;
   --light: 300;
   --medium: 400;
   --bold: 700;
@@ -232,7 +234,9 @@ a:hover {
   width: 100%;
   /*INLINE style={{height: 50}} */
 }
-
+.grassetto {
+  font-family: var(--ff-third);
+}
 /*=============== 
 Button
 ===============
@@ -537,7 +541,7 @@ Body
 Background
 =============
  */
-.background {
+ {
   /* background-image: url("../../src/assets/sfondo.jpeg"); */
   background-repeat: repeat;
   background-position: top;
@@ -1035,4 +1039,90 @@ picture img {
 }
 .policy p {
   padding: 2rem;
+}
+
+/* 
+=========
+COVID
+========= 
+*/
+.covid p {
+  margin: 0.75rem;
+}
+.oferta p {
+  margin: 2rem;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.landing .contenitore-servizi {
+  padding: 0;
+}
+
+.cubi p {
+  margin: 1rem;
+}
+.cubi {
+  display: flex;
+}
+
+.cubi .servizio {
+  width: 325px;
+  width: 490px;
+}
+
+.cubi .testo {
+  width: 2vw;
+  max-width: 325px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.coppia {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 1185px) {
+  .coppia {
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+  .cubi .servizio {
+    width: 80vw;
+    margin: 0;
+  }
+  .cubi .testo {
+    width: 70vw;
+    max-width: 80vw;
+  }
+  .rev {
+    flex-direction: column-reverse;
+  }
+}
+.reviews {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 250px; /*  No stretching: */
+}
+.reviews p {
+  width: 300px;
+  font-weight: bold;
+}
+.off {
+  color: #ccd6df;
+}
+.on {
+  color: #f0ad4e;
+}
+.reviews .review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  margin: 2rem;
+  text-align: center;
+}
+.review svg {
+  font-size: 25px;
+  filter: drop-shadow(var(--dark-shadow));
 }
