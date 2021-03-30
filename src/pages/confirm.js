@@ -4,8 +4,6 @@ import Footer from "../components/Footer"
 import Seo from "../components/Seo"
 
 const Confirm = ({ location }) => {
-  const { name, email, content } = location.state
-
   return (
     <div style={{ overflowX: "hidden" }}>
       <Seo
@@ -63,7 +61,7 @@ const Confirm = ({ location }) => {
                         placeholder="Tu nombre"
                         className="form-control"
                         required
-                        value={name}
+                        value={location.state ? location.state.name : ""}
                         readOnly
                       />
                       <label htmlFor="name">EMAIL</label>
@@ -78,8 +76,8 @@ const Confirm = ({ location }) => {
                         name="email"
                         className="form-control"
                         required
-                        value={email}
-                        readOnly
+                        value={location.state ? location.state.email : ""}
+                        onChange={() => {}}
                       />
                       <label htmlFor="name">INFO</label>
                       <textarea
@@ -92,7 +90,7 @@ const Confirm = ({ location }) => {
                         placeholder="¿Cuando quieres empezar?"
                         className="form-control"
                         required
-                        value={content}
+                        value={location.state ? location.state.content : ""}
                         readOnly
                       ></textarea>
                     </div>
@@ -102,7 +100,14 @@ const Confirm = ({ location }) => {
                         borderRadius: "0.25rem",
                       }}
                       type="submit"
-                      className="submit-btn btn"
+                      className={`submit-btn btn  ${
+                        location.state &&
+                        location.state.name &&
+                        location.state.email.includes("@") &&
+                        location.state.content
+                          ? ""
+                          : "inactive-btn"
+                      }`}
                     >
                       CONFIRM
                     </button>
