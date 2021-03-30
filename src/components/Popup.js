@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import { useLocation } from "@reach/router" // this helps tracking the location
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies"
-import CookieConsent from "react-cookie-consent"
+import CookieConsent, { Cookies } from "react-cookie-consent"
+import { Context } from "../context/context"
 
 const Popup = () => {
+  const { setDisabled } = useContext(Context)
   const location = useLocation()
 
   return (
@@ -16,18 +18,23 @@ const Popup = () => {
       flipButtons
       ariaAcceptLabel
       onAccept={() => {
+        Cookies.set("gatsby-gdpr-google-tagmanager", true)
+        Cookies.set("gatsby-gdpr-google-analytics", true)
         initializeAndTrack(location)
+        setDisabled(false)
         console.log("Cookies accepted")
       }}
       location="bottom"
       buttonText="ACEPTA"
+      sameSite="none"
+      cookieSecurity
       enableDeclineButton
       declineButtonText="no"
       ariaDeclineLabel
       declineButtonStyle={{
         padding: 5,
         margin: 9,
-        textTransform: "capitalize",
+        textTransform: "lowercase",
         backgroundColor: "#2B373B",
       }}
       onDecline={() => {

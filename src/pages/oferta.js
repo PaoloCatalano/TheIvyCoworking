@@ -7,14 +7,14 @@ import Review from "../components/Review"
 import Services from "../components/Services"
 import Img from "gatsby-background-image"
 import Image from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import Slider from "../components/slider"
 
 const Oferta = () => {
   const [name, setName] = React.useState("")
   const [email, setEmail] = React.useState("")
   const [content, setContent] = React.useState("")
   const {
-    logo,
     oferta,
     pic1,
     pic2,
@@ -175,7 +175,7 @@ const Oferta = () => {
                       className="grassetto"
                       style={{ margin: "1rem", fontSize: 18 }}
                     >
-                      Dal 22 al 30 de marzo 2021
+                      Dal 6 al 30 de April 2021
                     </h3>
                     <h4
                       style={{
@@ -189,72 +189,122 @@ const Oferta = () => {
                       ¡Reserva aquí y disfruta de 1 semana de prueba sin coste
                       ni compromiso!
                     </h4>
-                    <form
-                      action="https://formspree.io/f/mgepdgpb"
-                      method="POST"
-                    >
+                    <form>
                       <div className="form-group">
-                        <input
-                          style={{ border: "solid 1px black" }}
-                          type="text"
-                          name="name"
-                          placeholder="Tu nombre"
-                          className="form-control"
-                          required
-                          onChange={e => {
-                            setName(e.target.value)
+                        <div
+                          style={{
+                            display: "flex",
+                            transform: "translateX(5px)",
                           }}
-                        />
-                        <input
-                          style={{ border: "solid 1px black" }}
-                          type="email"
-                          placeholder="Tu email"
-                          name="email"
-                          className="form-control"
-                          required
-                          onChange={e => {
-                            setEmail(e.target.value)
+                        >
+                          <input
+                            style={{
+                              border: `solid 1px ${name ? "black" : "#F94144"}`,
+                            }}
+                            type="text"
+                            name="name"
+                            placeholder="Tu nombre"
+                            className="form-control"
+                            required
+                            onChange={e => {
+                              setName(e.target.value)
+                            }}
+                          />
+                          <span style={{ color: "#F94144", paddingLeft: 3 }}>
+                            *
+                          </span>
+                        </div>
+                        <div
+                          style={{
+                            display: "flex",
+                            transform: "translateX(5px)",
                           }}
-                        />
-                        <textarea
-                          style={{ border: "solid 1px black" }}
-                          name="message"
-                          placeholder="¿Cuando quieres empezar?"
-                          className="form-control"
-                          required
-                          onChange={e => {
-                            setContent(e.target.value)
+                        >
+                          <input
+                            style={{
+                              border: `solid 1px ${
+                                email.includes("@") ? "black" : "#F94144"
+                              }`,
+                            }}
+                            type="email"
+                            placeholder="Tu email"
+                            name="email"
+                            className="form-control"
+                            required
+                            onChange={e => {
+                              setEmail(e.target.value)
+                            }}
+                          />
+                          <span style={{ color: "#F94144", paddingLeft: 3 }}>
+                            *
+                          </span>
+                        </div>
+
+                        <div
+                          style={{
+                            display: "flex",
+                            transform: "translateX(5px)",
                           }}
-                        ></textarea>
+                        >
+                          <textarea
+                            style={{
+                              border: `solid 1px ${
+                                content ? "black" : "#F94144"
+                              }`,
+                            }}
+                            name="message"
+                            placeholder="Cuando quieres empezar?"
+                            className="form-control"
+                            required
+                            onChange={e => {
+                              setContent(e.target.value)
+                            }}
+                          ></textarea>
+                          <span style={{ color: "#F94144", paddingLeft: 3 }}>
+                            *
+                          </span>
+                        </div>
+                        <p
+                          style={{
+                            color: "#F94144",
+                            marginBottom: 20,
+                            textAlign: "left",
+                          }}
+                        >
+                          * Requerido
+                        </p>
                       </div>
-                      <button
-                        style={{
-                          backgroundColor: "black",
-                          borderRadius: "0.25rem",
+                      <Link
+                        className={`submit-btn btn  ${
+                          name && email.includes("@") && content
+                            ? "active-btn"
+                            : "inactive-btn"
+                        }`}
+                        to="/confirm/"
+                        alt="confirm page"
+                        state={{
+                          name: `${name}`,
+                          email: `${email}`,
+                          content: `${content}`,
                         }}
-                        type="submit"
-                        className="submit-btn btn"
+                        style={{
+                          borderRadius: "0.25rem",
+                          textTransform: "uppercase",
+                          fontWeight: 600,
+                        }}
                         onClick={() => {
                           if (typeof window !== "undefined") {
-                            if (
-                              window.fbq != null &&
-                              name &&
-                              email.includes("@") &&
-                              content
-                            ) {
+                            if (window.fbq != null) {
                               window.fbq("track", "Lead", {
                                 value: 100,
                                 currency: "EUR",
-                                //   content_name: name,
-                                //   content_type: email,
-                                //   content_category: content,
                               })
                             }
                           }
                         }}
                       >
                         Reserva aquì
-                      </button>
+                      </Link>
                     </form>
                   </article>
                 </div>
@@ -263,6 +313,28 @@ const Oferta = () => {
           </Img>
           <div style={{ display: "grid", placeItems: "center" }}>
             <div style={{ maxWidth: 1500 }}>
+              <h1
+                style={{
+                  textAlign: "center",
+                  fontWeight: 900,
+                  fontSize: 50,
+                  color: "#333333",
+                  margin: "2rem",
+                }}
+              >
+                QUE OFRECEMOS
+              </h1>
+              <article className="oferta" style={{ textAlign: "center" }}>
+                <p>
+                  Un espacio seguro adaptado a la normativa actual anti COVID y
+                  con mobiliario ergonomico.
+                </p>
+                <p>
+                  Un espacio acogedor de 160 m2, en el que podrás refugiarte de
+                  los ruidos de la ciudad estando a dos pasos de ella!
+                </p>
+              </article>
+              <Slider />
               <h1
                 style={{
                   textAlign: "center",
@@ -368,14 +440,14 @@ const Oferta = () => {
               >
                 NUESTROS SERVICIOS
               </h1>
-              <Services />
+              <Services lang="es" />
             </div>
           </div>
 
           <Covid />
         </div>
       </div>
-      <Footer />
+      <Footer lang="es" />
     </div>
   )
 }

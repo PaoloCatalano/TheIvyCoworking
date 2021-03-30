@@ -20,7 +20,7 @@ const Fotos = () => {
       <LanguageButtonSpecial />
       <Section title="fotos" />
       <Rooms esp />
-      <Footer lang="ca" />
+      <Footer lang="es" />
     </>
   )
 }

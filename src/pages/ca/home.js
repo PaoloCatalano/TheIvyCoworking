@@ -11,6 +11,7 @@ import Section from "../../components/Section"
 import Descrizione from "../../components/Descrizione"
 import Seo from "../../components/Seo"
 import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 export default function Home() {
   const { aboutCat, descCat } = useStaticQuery(graphql`
@@ -57,6 +58,15 @@ export default function Home() {
             <div id="pricing" className="position"></div>
             <Section title={"tarifes"} />
             <Pricing cat />
+            <section className="contenitore-servizi">
+              <Link
+                to="/oferta/"
+                alt="OFERTA"
+                className=" link-oferta grassetto blue pink"
+              >
+                descobreix la nostra oferta
+              </Link>
+            </section>
             <div className="spazio" style={{ height: 50 }}></div>
           </div>
         </section>

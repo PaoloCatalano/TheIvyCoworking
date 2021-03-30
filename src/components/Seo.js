@@ -3,8 +3,10 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-
+// import { Context } from "../context/context"
 const SEO = ({ title, description, image, article, lang, keywords }) => {
+  // const { disabled } = React.useContext(Context)
+
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -30,6 +32,13 @@ const SEO = ({ title, description, image, article, lang, keywords }) => {
       titleTemplate={titleTemplate}
       htmlAttributes={{ lang: `${lang || "en"}` }}
     >
+      {/* <script>{`window['ga-disable-UA-191983767-1'] = ${disabled}`}</script>
+      {!disabled && (
+        <script
+          async=""
+          src="https://www.googletagmanager.com/gtag/js?id=UA-191983767-1"
+        ></script>
+      )} */}
       <link rel="alternate" hreflang="en" href={`${siteUrl}`} />
       <link rel="alternate" hreflang="es" href={`${siteUrl}/es/`} />
       <link rel="alternate" hreflang="ca" href={`${siteUrl}/ca/`} />

@@ -9,7 +9,7 @@ import Contact from "../components/Contact"
 import Pricing from "../components/Pricing"
 import Section from "../components/Section"
 import Descrizione from "../components/Descrizione"
-
+import { Link } from "gatsby"
 export default function Home() {
   return (
     <>
@@ -33,6 +33,15 @@ export default function Home() {
             <div id="pricing" className="position"></div>
             <Section title={"pricing"} />
             <Pricing />
+            <section className="contenitore-servizi">
+              <Link
+                to="/oferta/"
+                alt="promotion"
+                className="grassetto blue pink link-oferta"
+              >
+                discover our offer!{" "}
+              </Link>
+            </section>
             <div className="spazio" style={{ height: 50 }}></div>
           </div>
         </section>

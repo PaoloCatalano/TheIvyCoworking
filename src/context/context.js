@@ -1,17 +1,19 @@
 import React, { useState, createContext } from "react"
+import { Cookies } from "react-cookie-consent"
+
 const Context = createContext()
 const Provider = ({ children }) => {
   // pupup
-  const [accepted, setAccepted] = useState(false)
+  const [disabled, setDisabled] = useState(
+    !Cookies.get("gatsby-gdpr-google-tagmanager")
+  )
 
   React.useEffect(() => {
-    if (accepted) {
-      console.log("accepted: ", accepted)
-    }
-  }, [accepted])
+    console.log("disabled: ", disabled)
+  }, [disabled])
 
   return (
-    <Context.Provider value={{ accepted, setAccepted }}>
+    <Context.Provider value={{ disabled, setDisabled }}>
       {children}
     </Context.Provider>
   )

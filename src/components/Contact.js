@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "gatsby"
 // Contáctanos
 
 // Nombre
@@ -8,6 +8,9 @@ import React from "react"
 // Envia
 
 const Contact = ({ lang }) => {
+  const [nome, setNome] = React.useState("")
+  const [eMail, setEMail] = React.useState("")
+  const [message, setMessage] = React.useState("")
   return (
     <article className="contact-form">
       {lang === "es" ? (
@@ -18,7 +21,7 @@ const Contact = ({ lang }) => {
         <h3>get in touch</h3>
       )}
 
-      <form action="https://formspree.io/f/mgepdgpb" method="POST">
+      <form>
         <div className="form-group">
           <input
             type="text"
@@ -28,6 +31,9 @@ const Contact = ({ lang }) => {
             }
             className="form-control"
             required
+            onChange={e => {
+              setNome(e.target.value)
+            }}
           />
           <input
             type="email"
@@ -37,6 +43,9 @@ const Contact = ({ lang }) => {
             name="email"
             className="form-control"
             required
+            onChange={e => {
+              setEMail(e.target.value)
+            }}
           />
           <textarea
             name="message"
@@ -46,11 +55,44 @@ const Contact = ({ lang }) => {
             }
             className="form-control"
             required
+            onChange={e => {
+              setMessage(e.target.value)
+            }}
           ></textarea>
         </div>
-        <button type="submit" className="submit-btn btn">
+        {/* <button type="submit" className="submit-btn btn">
           {lang === "es" ? "envia" : lang === "ca" ? "envia" : "submit here"}
-        </button>
+        </button> */}
+        <Link
+          style={{ textTransform: "uppercase" }}
+          className={`submit-btn btn  ${
+            nome && eMail.includes("@") && message ? "" : "inactive-btn"
+          }`}
+          to="/confirm/"
+          alt="confirm page"
+          state={{
+            name: `${nome}`,
+            email: `${eMail}`,
+            content: `${message}`,
+          }}
+          // style={{
+          //   borderRadius: "0.25rem",
+          //   textTransform: "uppercase",
+          //   fontWeight: 600,
+          // }}
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              if (window.fbq != null) {
+                window.fbq("track", "Lead", {
+                  value: 100,
+                  currency: "EUR",
+                })
+              }
+            }
+          }}
+        >
+          {lang === "es" ? "envia" : lang === "ca" ? "envia" : "submit here"}
+        </Link>
       </form>
     </article>
   )
