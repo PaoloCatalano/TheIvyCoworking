@@ -9,7 +9,7 @@ Fonts
 /*
 =============== 
 Variables
-===============pink
+===============
 */
 :root {
   --transition: all 0.3s linear;
@@ -233,11 +233,12 @@ a:hover {
 }
 .spazio {
   width: 100%;
-  /*INLINE style={{height: 50}} */
+  /*INLINE style={{height: 50}}btn-container-flex */
 }
 .grassetto {
   font-family: var(--ff-third);
 }
+
 /*=============== 
 Button
 ===============
@@ -265,7 +266,7 @@ button {
   }
 }
 /*
-=============== .pink
+===============
 Navbar
 ===============
 */
@@ -353,6 +354,14 @@ nav {
   transform: translate(250px, -50px);
   position: fixed;
   z-index: 999999999;
+}
+.btn-container-flex-static {
+  display: flex;
+
+  flex-direction: row-reverse;
+  margin: 0 0.5rem;
+  transform: translate(0, 0);
+  position: static;
 }
 @media screen and (max-width: 400px) {
   .btn-container-flex {
