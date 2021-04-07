@@ -8,8 +8,9 @@ import Services from "../components/Services"
 import Img from "gatsby-background-image"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Slider from "../components/slider"
+import SliderOferta from "../components/sliderOferta"
 import TwoLangBtn from "../components/TwoLangBtn"
+import Countdown from "../components/Countdown"
 
 const Oferta = () => {
   const [name, setName] = React.useState("")
@@ -168,6 +169,7 @@ const Oferta = () => {
                       padding: "2rem 1rem",
                     }}
                   >
+                    <div id="form"></div>
                     <strong style={{ fontSize: 50 }}>
                       {eng ? "OFFER" : "OFERTA"}
                     </strong>
@@ -202,6 +204,7 @@ const Oferta = () => {
                         ? "Book it here and enjoy a 1 week trial at no cost and no commitment!"
                         : " ¡Reserva aquí y disfruta de 1 semana de prueba sin coste ni compromiso!"}
                     </h4>
+
                     <form>
                       <div className="form-group">
                         <div
@@ -339,9 +342,7 @@ const Oferta = () => {
                   margin: "2rem",
                 }}
               >
-                {eng
-                  ? "                                              WHAT WE OFFER"
-                  : "QUE OFRECEMOS"}
+                {eng ? "WHAT WE OFFER" : "QUE OFRECEMOS"}
               </h1>
               <article className="oferta" style={{ textAlign: "center" }}>
                 <p>
@@ -355,7 +356,7 @@ const Oferta = () => {
                     : "Un espacio acogedor de 160 m2, en el que podrás refugiarte de los ruidos de la ciudad estando a dos pasos de ella!"}
                 </p>
               </article>
-              <Slider />
+              <SliderOferta />
               <h1
                 style={{
                   textAlign: "center",
@@ -366,7 +367,7 @@ const Oferta = () => {
                 }}
               >
                 {eng
-                  ? "DISCOVER THE ADVANTAGES(PROs) OF WORKING HERE"
+                  ? "DISCOVER THE ADVANTAGES OF WORKING HERE"
                   : "DESCUBRES LAS VENTAJAS DE TRABAJAR AQUÌ"}
               </h1>
               <div className="contenitore-servizi cubi">
@@ -494,7 +495,7 @@ const Oferta = () => {
               <Services lang={`${eng ? "en" : "es"}`} />
             </div>
           </div>
-
+          <Countdown lang={`${eng ? "en" : "es"}`} />
           <Covid lang={`${eng ? "en" : "es"}`} />
         </div>
       </div>

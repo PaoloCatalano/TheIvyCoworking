@@ -551,12 +551,13 @@ Body
 Background
 =============
  */
- {
-  /* background-image: url("../../src/assets/sfondo.jpeg"); */
+
+/* {background-image: url("../../src/assets/sfondo.jpeg"); 
   background-repeat: repeat;
   background-position: top;
   background-size: contain;
 }
+*/
 
 /* 
 ==============
@@ -1155,4 +1156,7 @@ COVID
 .inactive-btn {
   background-color: grey;
   pointer-events: none;
+}
+.trasp {
+  background: transparent;
 }
