@@ -8,7 +8,7 @@ import Services from "../components/Services"
 import Img from "gatsby-background-image"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import SliderOferta from "../components/sliderOferta"
+import SliderOferta from "../components/SliderOferta"
 import TwoLangBtn from "../components/TwoLangBtn"
 import Countdown from "../components/Countdown"
 
