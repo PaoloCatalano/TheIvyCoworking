@@ -151,7 +151,7 @@ const Oferta = () => {
                     <p>
                       {eng
                         ? "Are you looking for a new way of working in a comfortable, motivating and  welcoming place close to the beautiful Sagrada Familia? "
-                        : "¿Buscas una nueva forma de trabajar, en un espacioconfortable y acogedor cerca de la Sagrada Familia, que te motive?"}
+                        : "¿Buscas una nueva forma de trabajar, en un espacio confortable y acogedor cerca de la Sagrada Familia, que te motive?"}
                     </p>
                     <p>
                       {eng

@@ -118,7 +118,6 @@ const Confirm = ({ location }) => {
           </div>
         </div>
       </div>
-      <Footer lang="es" />
     </div>
   )
 }
