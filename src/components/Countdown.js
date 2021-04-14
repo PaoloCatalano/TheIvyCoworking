@@ -13,19 +13,16 @@ const Countdown = ({ lang }) => {
   const hours = useRef(null)
   const minutes = useRef(null)
   // const seconds = useRef(null)
-  let timing = new Date().getSeconds()
 
+  const setCountdown = () => {
+    hours.current.innerHTML = 23 - new Date().getHours()
+    minutes.current.innerHTML = 59 - new Date().getMinutes()
+    // console.log(59 - new Date().getSeconds())
+  }
   useEffect(() => {
-    setInterval(() => {
-      timing = new Date().getSeconds()
-      hours.current.innerHTML = 23 - new Date().getHours()
-      minutes.current.innerHTML = 59 - new Date().getMinutes()
-      // console.log(59 - new Date().getSeconds())
-    }, 1000)
-    return clearInterval(() => {
-      timing = new Date().getSeconds()
-    })
-  }, [timing])
+    const interval = setInterval(setCountdown, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div style={{ backgroundColor: "#ddbea9", padding: "3rem 0" }}>

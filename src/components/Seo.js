@@ -45,10 +45,9 @@ const SEO = ({ title, description, image, article, lang, keywords }) => {
       <meta name="description" content={seo.description} />
       <meta
         name="keywords"
-        content={
-          `ivy, coworking, Barcelona, Spain, Barcellona, El Clot, workspace, Marianna, Viola, caffe, cafe, coffee, drink, tea, free, ` +
-          keywords
-        }
+        content={`ivy, coworking, Barcelona, Spain, Barcellona, El Clot, workspace, Marianna, Viola, caffe, cafe, coffee, drink, tea, free, ${
+          keywords ? keywords : ""
+        }`}
       />
       <meta name="image" content={seo.image} />
 

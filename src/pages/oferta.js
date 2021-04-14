@@ -97,10 +97,10 @@ const Oferta = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <Seo
-        title="The Ivy Coworking Fotos"
+        title="Oferta / Offer"
         lang="es"
-        description="Nuestro coworking se sitúa en un local de 160 m2 distrubuidos en dos plantas. Es un acogedor espacio, en el que poder refugiarse de los ruidos de la ciudad, pero aún así, estar a dos pasos de ella."
-        keywords="SALA REUNIONS, CABINA TELEFÒNICA, PATIO SECRETO, ZONA CHILL Y COMEDOR"
+        description="1 FREE WEEK, The offer is limited! | 1 SEMANA GRATIS! ¡ES UNA OFERTA VALIDA SOLO PARA HOY!"
+        keywords="week, semana, gratis, limited, special, offer, oferta, hoy, today"
       />
       <SpecialNavbar esp />
       <TwoLangBtn eng={eng} setEng={setEng} />
@@ -316,8 +316,8 @@ const Oferta = () => {
                           if (typeof window !== "undefined") {
                             if (window.fbq != null) {
                               window.fbq("track", "Lead", {
-                                value: 100,
-                                currency: "EUR",
+                                value: "",
+                                currency: "",
                               })
                             }
                           }

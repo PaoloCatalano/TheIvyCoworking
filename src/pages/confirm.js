@@ -1,17 +1,11 @@
 import React from "react"
 import SpecialNavbar from "../components/SpecialNavbar"
-import Footer from "../components/Footer"
 import Seo from "../components/Seo"
 
 const Confirm = ({ location }) => {
   return (
     <div style={{ overflowX: "hidden" }}>
-      <Seo
-        title="The Ivy Coworking Fotos"
-        lang="es"
-        description="Nuestro coworking se sitúa en un local de 160 m2 distrubuidos en dos plantas. Es un acogedor espacio, en el que poder refugiarse de los ruidos de la ciudad, pero aún así, estar a dos pasos de ella."
-        keywords="SALA REUNIONS, CABINA TELEFÒNICA, PATIO SECRETO, ZONA CHILL Y COMEDOR"
-      />
+      <Seo title="Confirm" lang="es" />
       <SpecialNavbar esp />
       <div className="landing">
         <div style={{ position: "relative" }}>

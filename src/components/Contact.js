@@ -84,8 +84,8 @@ const Contact = ({ lang }) => {
             if (typeof window !== "undefined") {
               if (window.fbq != null) {
                 window.fbq("track", "Lead", {
-                  value: 100,
-                  currency: "EUR",
+                  value: "",
+                  currency: "",
                 })
               }
             }
