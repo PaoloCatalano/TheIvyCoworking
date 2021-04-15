@@ -306,6 +306,7 @@ const Oferta = () => {
                           name: `${name}`,
                           email: `${email}`,
                           content: `${content}`,
+                          language: `${eng ? "English" : "Spanish"}`,
                         }}
                         style={{
                           borderRadius: "0.25rem",

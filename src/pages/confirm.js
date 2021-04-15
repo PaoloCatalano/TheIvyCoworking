@@ -3,6 +3,11 @@ import SpecialNavbar from "../components/SpecialNavbar"
 import Seo from "../components/Seo"
 
 const Confirm = ({ location }) => {
+  let langInfo = "English"
+  if (location.state && location.state.languageInfo) {
+    langInfo = location.state.languageInfo
+  }
+
   return (
     <div style={{ overflowX: "hidden" }}>
       <Seo title="Confirm" lang="es" />
@@ -43,6 +48,16 @@ const Confirm = ({ location }) => {
                   <strong style={{ fontSize: 50 }}>CONFIRM</strong>
                   <form action="https://formspree.io/f/mgepdgpb" method="POST">
                     <div className="form-group">
+                      <input
+                        type="hidden"
+                        readOnly
+                        name="language"
+                        value={
+                          location.state?.language
+                            ? location.state.language
+                            : `contact from homepage: ${langInfo}`
+                        }
+                      />
                       <label htmlFor="name">NOMBRE / NAME</label>
                       <input
                         style={{

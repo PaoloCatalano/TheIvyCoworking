@@ -74,6 +74,7 @@ const Contact = ({ lang }) => {
             name: `${nome}`,
             email: `${eMail}`,
             content: `${message}`,
+            languageInfo: lang,
           }}
           // style={{
           //   borderRadius: "0.25rem",
