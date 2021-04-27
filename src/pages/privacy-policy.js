@@ -6,7 +6,7 @@ import Footer from "../components/Footer"
 const privacyPolicy = () => {
   return (
     <>
-      <SpecialNavbar />
+      <SpecialNavbar smallPopup />
       <section className="container-all policy">
         <Section title="POLÍTICA DE COOKIES" />
         <p>

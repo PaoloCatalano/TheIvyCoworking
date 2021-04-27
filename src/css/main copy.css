@@ -69,8 +69,6 @@ Variables
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* bordi per iniziare */
-  /* border: 1px solid rgb(169, 190, 197);blue */
 }
 *::selection {
   background-color: var(--chiaro-b);
@@ -184,7 +182,6 @@ a:hover {
 .cerchio {
   padding: 5px;
   background: #ffffff;
-  /* background: var(--trasparente-colore); */
   border-radius: 100%;
   transition: var(--transition);
 }
@@ -202,7 +199,6 @@ a:hover {
   font-size: 250%;
 }
 .facebook {
-  /* color: rgb(49, 49, 245); */
   color: var(--scurissimo-o);
 }
 
@@ -254,8 +250,6 @@ button {
   font-size: 0.875rem;
   border: 2px solid var(--clr-black);
   cursor: pointer;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius); */
 }
 @media screen and (min-width: 915px) and (max-width: 950px) {
   .linkElang button {
@@ -277,10 +271,6 @@ nav {
   color: var(--scurissimo-o);
 }
 .navbar {
-  /* bug che tutto va sotto la navbar */
-  /* position: fixed; 
-  width: 100vw; */
-
   /* bug che sul cell il navigateTo() porta poco sotto il livello*/
   position: sticky;
   top: 0;
@@ -304,14 +294,12 @@ nav {
 
 .nav-toggle {
   font-size: 1.5rem;
-  /* color: var(--clr-primary-5); */
   background: transparent;
   border-color: transparent;
   transition: var(--transition);
   cursor: pointer;
 }
 .icone-active {
-  /* color: var(--clr-primary-1); */
   transform: rotate(90deg);
 }
 
@@ -319,7 +307,6 @@ nav {
   cursor: pointer;
 }
 .links a {
-  /* font-size: 1rem; */
   color: var(--scurissimo-b);
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -547,26 +534,13 @@ Body
   padding: 0 4vh;
 }
 /* 
-==============
-Background
-=============
- */
-
-/* {background-image: url("../../src/assets/sfondo.jpeg"); 
-  background-repeat: repeat;
-  background-position: top;
-  background-size: contain;
-}
-*/
 
 /* 
 ==============
 Descrizione
 =============
  */
-.white {
-  /*classe di Descrizione*/
-}
+
 .about {
   margin: 3rem auto;
   max-width: 35rem;
@@ -584,22 +558,13 @@ Descrizione
   font-weight: bolder;
   color: var(--colore-titolo);
 }
-/* .about-title h1 span {
-  color: var(--medio-b);
-}
-.about-title h3 {
-  letter-spacing: 0.5px;
-  margin: 3rem;
-} */
+
 .about p {
   text-align: justify;
-  /* letter-spacing: 1px;
-  letter-spacing: 0.5px; */
   margin: 2rem;
   background-color: #fff;
   font-family: var(--ff-second);
   font-weight: 600;
-  /* line-height: 5px; */
 }
 
 /* 
@@ -616,6 +581,9 @@ Section
 }
 .position {
   transform: translateY(-85px);
+  -webkit-scroll-padding: 0;
+  -o-scroll-padding: 0;
+  scroll-padding: 0;
 }
 @media screen and (max-width: 600px) {
   .depth {
@@ -701,7 +669,6 @@ Pricing
   margin: 1rem 0.5rem;
 }
 
-/* eliminare margine destro */
 @media screen and (max-width: 600px) {
   .bordo-carta {
     margin: 1rem 0.1rem;
@@ -713,7 +680,6 @@ Pricing
 
 .card {
   font-family: var(--ff-primary);
-
   padding: 1rem;
   flex: 0 1 300px;
   height: 450px;
@@ -722,7 +688,6 @@ Pricing
   place-items: center;
   text-align: center;
   grid-template-columns: 1fr;
-  /* grid-template-rows: 70px 70px 120px 70px 70px; */
   transition: var(--transition);
   border: solid 1px var(--colore-titolo);
   margin: 3px;
@@ -910,14 +875,6 @@ Footer
 .telephone-box .service-icon {
   transform: translateY(5px);
 }
-/* ==============
- RESPONSIVE GLOBAL 
-================= */
-/* @media screen and (max-width: 450px) {
-  body {
-    font-size: smaller;
-  }
-} */
 
 /* 
 ==============
@@ -1040,7 +997,6 @@ picture img {
     text-align: center;
   }
   .desc {
-    /* sistemare la larghezza del testo */
     grid-row: 2 / span;
     grid-column: 1;
     letter-spacing: var(--spacing);
@@ -1159,4 +1115,49 @@ COVID
 }
 .trasp {
   background: transparent;
+}
+/* =====
+popup
+===== */
+.CookieConsent {
+  box-shadow: 0px 0px 6px var(--gray-dark);
+}
+.overlayClasses {
+  display: grid;
+  place-items: center;
+}
+.overlayClasses .privacy-page {
+  display: grid;
+  place-items: end center;
+}
+.containerClasses {
+  min-width: 300px;
+  max-width: 476px;
+  border-radius: 4px !important;
+}
+.logo-cookie {
+  padding: 16px;
+  padding-bottom: 5px;
+  background: var(--medio-b) !important;
+  border-radius: 4px 4px 0 0;
+}
+
+.notice {
+  padding: 16px;
+  color: #fff;
+  background-color: #2b373b;
+}
+.notice h2 {
+  margin-bottom: 16px;
+}
+.buttonWrapperClasses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center !important;
+  background: rgb(43, 55, 59);
+}
+.buttonClasses:hover {
+  background: var(--pink) !important;
 }

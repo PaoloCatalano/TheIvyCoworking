@@ -5,8 +5,9 @@ import about from "../constants/about"
 import { GoArrowLeft } from "react-icons/go"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Popup from "../components/Popup"
+import PopupSmall from "../components/PopupSmall"
 
-const SpecialNavbar = ({ esp, cat }) => {
+const SpecialNavbar = ({ esp, cat, smallPopup }) => {
   const {
     contentfulContatti: { email },
   } = useStaticQuery(graphql`
@@ -19,7 +20,7 @@ const SpecialNavbar = ({ esp, cat }) => {
 
   return (
     <nav className="navbar">
-      <Popup />
+      {smallPopup ? <PopupSmall /> : <Popup />}
 
       <div className="nav-center">
         <div className="nav-header">

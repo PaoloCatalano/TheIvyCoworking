@@ -188,8 +188,8 @@ const Oferta = () => {
                       style={{ margin: "1rem", fontSize: 18 }}
                     >
                       {eng
-                        ? "From the 1st to the 30th of April"
-                        : "Dal 6 al 30 de April 2021"}
+                        ? "From the 1st to the 6th of May"
+                        : "Desde el 6 de Abril hasta el 6 de Mayo 2021"}
                     </h3>
                     <h4
                       style={{
