@@ -581,9 +581,9 @@ Section
 }
 .position {
   transform: translateY(-85px);
-  -webkit-scroll-padding: 0;
-  -o-scroll-padding: 0;
-  scroll-padding: 0;
+  -webkit-scroll-padding: 2em;
+  -o-scroll-padding: 2em;
+  scroll-padding: 2em;
 }
 @media screen and (max-width: 600px) {
   .depth {
@@ -1009,6 +1009,7 @@ picture img {
 }
 .policy {
   text-align: justify;
+  overflow-x: hidden;
 }
 .policy p {
   padding: 2rem;

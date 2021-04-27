@@ -7,7 +7,7 @@ const privacyPolicy = () => {
   return (
     <>
       <SpecialNavbar smallPopup />
-      <section className="container-all policy">
+      <section className="policy">
         <Section title="POLÍTICA DE COOKIES" />
         <p>
           The Ivy Co-working S.L., a través del presente documento, recoge su
