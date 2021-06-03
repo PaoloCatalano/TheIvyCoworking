@@ -122,9 +122,7 @@ const Countdown = ({ lang }) => {
             navigate("#form")
           }}
         >
-          {lang === "es"
-            ? "Reserva aquí tu semana gratis!"
-            : "Book a week for free now!"}
+          {lang === "es" ? "Reserva aquí!" : "Book now!"}
         </button>
       </div>
     </div>

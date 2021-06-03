@@ -99,7 +99,7 @@ const Oferta = () => {
       <Seo
         title="Oferta / Offer"
         lang="es"
-        description="1 FREE WEEK, The offer is limited! | 1 SEMANA GRATIS! ¡ES UNA OFERTA VALIDA SOLO PARA HOY!"
+        description="Daily limited offers! | ¡ES UNA OFERTA VALIDA SOLO PARA HOY!"
         keywords="week, semana, gratis, limited, special, offer, oferta, hoy, today"
       />
       <SpecialNavbar esp />
@@ -173,23 +173,36 @@ const Oferta = () => {
                     <strong style={{ fontSize: 50 }}>
                       {eng ? "OFFER" : "OFERTA"}
                     </strong>
-                    <div
-                      className="grassetto"
-                      style={{
-                        fontSize: 51,
-                        fontWeight: 900,
-                        color: "#077287",
-                      }}
-                    >
-                      {eng ? "1 FREE WEEK" : "1 SEMANA GRATIS!"}
+                    <div style={{ display: "block" }}>
+                      <div
+                        className="grassetto"
+                        style={{
+                          fontSize: 40,
+                          fontWeight: 900,
+                          color: "#077287",
+                        }}
+                      >
+                        {eng ? "1 FREE DAY" : "1 DÍA GRATIS"}
+                      </div>
+                      <div
+                        className="grassetto"
+                        style={{
+                          fontSize: 28,
+                          fontWeight: 900,
+                          color: "#077287",
+                        }}
+                      >
+                        {eng ? "+ 10% DISCOUNT" : "+ 10% DE DESCUENTO"}
+                      </div>
                     </div>
+
                     <h3
                       className="grassetto"
                       style={{ margin: "1rem", fontSize: 18 }}
                     >
                       {eng
-                        ? "From the 6th of April to the 14th of May 2021"
-                        : "Desde el 6 de Abril hasta el 14 de Mayo 2021"}
+                        ? "Book a day from Monday to Wednesday and if you choose one of our packs you'll have a 10% discount on the first one!"
+                        : "¡Reserva un día de lunes a miércoles y si eliges uno de nuestros paquetes tendrás un 10% de descuento en el primero!"}
                     </h3>
                     <h4
                       style={{
@@ -201,8 +214,8 @@ const Oferta = () => {
                       }}
                     >
                       {eng
-                        ? "Book it here and enjoy a 1 week trial at no cost and no commitment!"
-                        : " ¡Reserva aquí y disfruta de 1 semana de prueba sin coste ni compromiso!"}
+                        ? "Book it here and enjoy a 1 day trial at no cost and no commitment!"
+                        : "¡Reserva aquí y disfruta de 1 día de prueba sin coste y sin compromiso!"}
                     </h4>
 
                     <form>
