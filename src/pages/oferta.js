@@ -201,8 +201,8 @@ const Oferta = () => {
                       style={{ margin: "1rem", fontSize: 18 }}
                     >
                       {eng
-                        ? "Book a day from Monday to Wednesday and if you choose one of our packs you'll have a 10% discount on the first one!"
-                        : "¡Reserva un día de lunes a miércoles y si eliges uno de nuestros paquetes tendrás un 10% de descuento en el primero!"}
+                        ? "Book a day from Monday to Wednesday and if you choose one of our packs you'll have a 15% discount on the first one!"
+                        : "¡Reserva un día de lunes a miércoles y si eliges uno de nuestros paquetes tendrás un 15% de descuento en el primero!"}
                     </h3>
                     <h4
                       style={{
