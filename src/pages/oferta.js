@@ -192,7 +192,7 @@ const Oferta = () => {
                           color: "#077287",
                         }}
                       >
-                        {eng ? "+ 10% DISCOUNT" : "+ 10% DE DESCUENTO"}
+                        {eng ? "+ 15% DISCOUNT" : "+ 15% DE DESCUENTO"}
                       </div>
                     </div>
 
